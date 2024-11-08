@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <title>MyPoliClass</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link all'icona della pagina accanto al titolo, type="image/x-icon" indica il tipo di dati e rel="icon" indicano 
+    cosa sia e l'utilizzo (icon come icona o apple-toch-icon per le icone degli shortcut su dispositivi apple -->
+  <link rel="icon" type="image/x-icon" href="Images/icon.ico">
+
+  <!-- Link ai file dell'estetica-->
+  <link rel="stylesheet" href="Stylesheets/style.css">
+  <link rel="stylesheet" href="Stylesheets/styleResearchPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Link per la libreria delle icone-->
+</head>
+
+<body>
+
+  <header class="flex-container">
+    <div><img src="Images/icon.ico" alt="icon" width="64px" height="64px"></div>
+    <div>STRUMENTO DI RICERCA</div>
+    <div><img src="Images/user.svg" alt="user" width="64px" height="64px"></div>
+  </header>
+
+  <!--Bottone per tornare in cima alla pagina-->
+  <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="Images/arrow_upward.svg" alt="arrow_upward"
+      height="40px" width="40px"></button>
+
+  <script>
+    // Prendo il bottone
+    let mybutton = document.getElementById("topbutton");
+
+    // Dopo che l'utente va giù di 20px appare il bottone
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // Quando l'utente clicca sul bottone viene ripotatoro in cima
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  <!--Contenitore contenuto pagina-->
+  <div class="page">
+    <!--Menu dei filtri-->
+    <div class="filters">
+
+      <!--Titolo filtri-->
+      <div id="filterTitle">
+        <p>Filtri</p>
+        <img src="Images/filter_icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
+      </div>
+
+      <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
+
+        <!--Selettore grandezza-->
+        <fieldset class="filterbuttons">
+          <legend>Grandezza</legend>
+          <span><input type="radio" id="piccola" name="grandezza" value="piccola">
+            <label for="piccola">Piccola</label></span>
+          <span><input type="radio" id="media" name="grandezza" value="media">
+            <label for="media">Media</label></span>
+          <span><input type="radio" id="grande" name="grandezza" value="grande">
+            <label for="grande">Grande</label></span>
+        </fieldset>
+
+        <!--Selettore tipo-->
+        <fieldset class="filterbuttons">
+          <legend>Tipo</legend>
+          <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
+            <label for="laboratorio">Laboratorio</label></span>
+          <span><input type="radio" id="aula" name="tipo" value="aula">
+            <label for="aula">Aula</label></span>
+        </fieldset>
+
+        <!--Selettore extra-->
+        <fieldset>
+          <legend>Funzioni Extra</legend>
+          <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
+            <label for="prese">Presnza di prese elettriche</label></span><br>
+          <span><input type="checkbox" id="lim" name="extraLim" value="lim">
+            <label for="lim">Lim</label></span><br>
+          <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
+            <label for="lavagna">Lavagna</label></span><br>
+          <span><input type="checkbox" id="aria_condizonata" name="extraAC" value="AC">
+            <label for="aria_condizonata">Aria condizionata</label></span><br>
+        </fieldset>
+
+        <div class="filterbuttons">
+          <input type="submit" value="Invia" title="Filtra i risultati">
+          <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
+        </div>
+      </form>
+    </div>
+
+    <!--Contenuto pagina-->
+    <div class="content">
+      <!--Barra di ricerca-->
+      <form id="searchbar" class="searchbar">
+        <input type="text" name="search" placeholder="Ricerca..">
+        <button type="submit"><img src="Images/search.svg" alt="searc_icon" height="20px" width="20px"></button>
+      </form>
+      <!--Contenuto ricerca-->
+      <div class="result">
+        Francesco Petrarca (Arezzo, 20 luglio 1304 Arquà, 18/19 luglio 1374) è stato uno scrittore, poeta e filosofo
+        italiano, considerato il precursore dell'umanesimo e uno dei fondamenti della letteratura italiana, soprattutto
+        grazie alla sua opera più celebre, il Canzoniere, patrocinato quale modello di eccellenza stilistica da Pietro
+        Bembo nei primi del Cinquecento.
+
+        Uomo moderno, slegato ormai dalla concezione della patria come mater e divenuto cittadino del mondo, Petrarca
+        rilanciò, in ambito filosofico, l'agostinismo in contrapposizione alla scolastica e operò una rivalutazione
+        storico-filologica dei classici latini. Fautore dunque di una ripresa degli studia humanitatis in senso
+        antropocentrico (e non più in chiave assolutamente teocentrica), Petrarca (che ottenne la laurea poetica a Roma
+        nel 1341) spese l'intera sua vita nella riproposta culturale della poetica e filosofia antica e patristica
+        attraverso l'imitazione dei classici, offrendo un'immagine di sé quale campione di virtù e della lotta contro i
+        vizi. La storia medesima del Canzoniere, infatti, è più un percorso di riscatto dall'amore travolgente per Laura
+        che una storia d'amore, e in quest'ottica si deve valutare anche l'opera latina del Secretum.
+
+        Le tematiche e la proposta culturale petrarchesca, oltre ad aver fondato il movimento culturale umanistico,
+        diedero avvio al fenomeno del petrarchismo, teso ad imitare stilemi, lessico e generi poetici propri della
+        produzione lirica volgare dell'Aretino.
+
+        Leggi la voce · Tutte le voci in vetrina
+
+        dahdjaldjadladlhalhdlahdal
+        dasdadadadad
+        adasdadadad
+        dasdadadasda
+        dahdjaldjadladlhalhdlahdaldasada
+        adsadadadadasddsadadada
+        sadadadadadadaadada
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
