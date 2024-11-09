@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>MyPoliClass</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link all'icona della pagina accanto al titolo, type="image/x-icon" indica il tipo di dati e rel="icon" indicano 
+    cosa sia e l'utilizzo (icon come icona o apple-toch-icon per le icone degli shortcut su dispositivi apple -->
+    <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
+
+    <!-- Link ai file dell'estetica-->
+    <link rel="stylesheet" href="../Home/style.css">
+    <link rel="stylesheet" href="styleMap.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="../Home/icon.ico" alt="icon" width="64px" height="64px">
+        <h1>MAPPA</h1>
+        <img src="../Home/user.svg" alt="user" width="64px" height="64px">
+    </header>
+
+    <h2>Mappa Grandi Aule</h2>
+
+    <!--Immagine della paintina della grandi aule-->
+    <div class="container">
+        <img src="Grandi-aule.jpeg" usemap="#aulegrandi" alt="Grandi-aule" width="100%" height="auto">
+        <!--Aree colorate con link che porta alla pagina della prenotazione, 
+            ogni aula fa parte di alcune classi per determinarne la grandezza e la posizione-->
+        <a id="A" href="../Prenotazione/index.html?class=A" class="big bottom">Aula A</a>
+        <a id="B" href="../Prenotazione/index.html?class=B" class="small_left bottom">Aula B</a>
+        <a id="C" href="../Prenotazione/index.html?class=C" class="big bottom">Aula C</a>
+        <a id="D" href="../Prenotazione/index.html?class=D" class="big top">Aula D</a>
+        <a id="E" href="../Prenotazione/index.html?class=E" class="small_left top">Aula E</a>
+        <a id="Orabona" href="../Prenotazione/index.html?class=Aula Magna Orabona" class="big top">Aula Magna Orabona</a>
+        <a id="G" href="../Prenotazione/index.html?class=G" class="big bottom">Aula G</a>
+        <a id="H" href="../Prenotazione/index.html?class=H" class="small_right bottom">Aula H</a>
+        <a id="I" href="../Prenotazione/index.html?class=I" class="big bottom">Aula I</a>
+        <a id="L" href="../Prenotazione/index.html?class=l" class="big top">Aula L</a>
+        <a id="M" href="../Prenotazione/index.html?class=M" class="small_right top">Aula M</a>
+        <a id="N" href="../Prenotazione/index.html?class=N" class="big top">Aula N</a>
+    </div>
+
+
+</body>
+
+</html>

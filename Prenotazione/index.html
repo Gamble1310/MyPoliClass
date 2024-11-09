@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>MyPoliClass</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link all'icona della pagina accanto al titolo -->
+    <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
+
+    <!-- Link ai file dell'estetica-->
+    <link rel="stylesheet" href="../Home/style.css">
+
+    <script>
+        // Funzione per ottenere il valore del parametro "class" dalla URL
+        function getClassNameFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("class") || "N/A"; // Restituisce "N/A" se il parametro non è presente
+        }
+
+        // Aggiorna il testo della prenotazione con il nome dell'aula
+        function updateClassName() {
+            const className = getClassNameFromURL();
+            document.getElementById("class-name").textContent = className;
+        }
+
+        // Esegue la funzione al caricamento della pagina
+        window.onload = updateClassName;
+    </script>
+</head>
+
+<body>
+    <header>
+       <img src="../Home/icon.ico" alt="icon" width="64px" height="64px">   
+       <h1>MAPPA</h1>
+       <img src="../Home/user.svg" alt="user" width="64px" height="64px">   
+    </header>
+
+    <p style="margin-top: 100px;">Prenotazione aula <span id="class-name">...</span></p>
+</body>
+</html>
