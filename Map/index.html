@@ -14,15 +14,31 @@
     <link rel="stylesheet" href="../Home/style.css">
     <link rel="stylesheet" href="../Map/styleMap.css">
     <link rel="stylesheet" href="../ResearchPage/styleResearchPage.css">
+    <!--Diversi elementi in questa pagina sono presi da ResearchPage-->
 
 </head>
 
 <!--Per l'header ho usato una flexbox-->
 <header>
-    <img src="../Home/icon.ico" alt="icon" width="64px" height="64px">
+    <span style="display: flex; flex-wrap: nowrap;">
+        <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
+        <img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></span>
     <h1>MYPOLICLASS</h1>
     <img src="../Home/user.svg" alt="user" width="64px" height="64px">
 </header>
+
+<!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
+    <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Home</a>
+    <a href="../ResearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+    <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+    <a href="#"><img src="../Home/group-icon.svg" width="36px" height="36px">Chi siamo</a>
+</div>
+
+<!--Oscuramento della pagina quando e' attiva la sidenav, cliccando sulla pagina l'overlay scampare con la sidebar-->
+<div id="overlay" onclick="closeNav()"></div>
 
 <!--Bottone per tornare in cima alla pagina-->
 <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg" alt="arrow-upward"
@@ -111,13 +127,14 @@
             <a id="M" href="../Prenotazione/index.html?class=M" class="small_right top">Aula M</a>
             <a id="N" href="../Prenotazione/index.html?class=N" class="big top">Aula N</a>
         </div>
-        
+
     </div>
 
 </div>
 
 
- <script type="text/javascript" src="../Home/topbutton.js"></script>
+<script type="text/javascript" src="../Home/topbutton.js"></script>
+<script type="text/javascript" src="../Home/sidenav.js"></script>
 </body>
 
 </body>
