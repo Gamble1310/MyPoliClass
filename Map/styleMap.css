@@ -1,4 +1,4 @@
-/*Immagine della piantina grandi aule*/
+/*              Immagine della piantina grandi aule                 */
 img[src="Grandi-aule.jpeg"]{
   display: block;
   margin-left: auto;
@@ -9,7 +9,10 @@ img[src="Grandi-aule.jpeg"]{
   object-fit: cover;
 }
 
-/*Contenitore per l'immagine della piantina e per i link colorati al suo interno*/
+
+
+
+/*       Contenitore per l'immagine della piantina e per i link colorati al suo interno       */
 .container{
     position: relative;
     margin-left: auto;
@@ -17,7 +20,10 @@ img[src="Grandi-aule.jpeg"]{
     width: 80%;
 }
 
-/*Link colorato che ti reindirizza alle pagine delle prenotazioni*/
+
+
+
+/*              Area dei link colorati che ti reindirizza alle pagine delle prenotazioni          */
 .container a{
     display: flex;
     text-align: center;
@@ -31,8 +37,8 @@ img[src="Grandi-aule.jpeg"]{
     font-size: 1vw;/* Dimensione del testo in viewport widith, % della larghezza dello schermo utilizzato*/
 }
 
-/*Lunghezze
- standerd delle aule (l'altezza e' tra le caratteristiche comuni a tutti)*/ 
+/*               Lunghezze
+                 standerd delle aule (l'altezza e' tra le caratteristiche comuni a tutti)                  */ 
 .big{
     width: 6.6%;
 }
@@ -45,7 +51,7 @@ img[src="Grandi-aule.jpeg"]{
     width: 4%;
 }
 
-/*Posizioni su o giu' standard delle aule (la posizione da sinistra cambia invace per ogni coppia di aule)*/
+/*        Posizioni su o giu' standard delle aule (la posizione da sinistra cambia invace per ogni coppia di aule)        */
 .top{
    top: 21%; 
 }
@@ -54,7 +60,7 @@ img[src="Grandi-aule.jpeg"]{
     top: 53.5%
 }
 
-/*Posizione da sinistra e colore specifici di ogni aula*/
+/*     Posizione da sinistra e colore specifici di ogni aula    */
 #A{ 
     left:45.5%;
     background-color: rgba(29, 186, 29, 0.5);
@@ -115,7 +121,7 @@ img[src="Grandi-aule.jpeg"]{
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-/* Hover più chiaro per ogni aula */
+/* Hover più chiaro per ogni aula               */
 #A:hover { 
     background-color: rgba(102, 255, 102, 0.5);
 }

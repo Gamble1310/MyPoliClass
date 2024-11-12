@@ -1,18 +1,27 @@
-/*Definizione variabili per il colore*/
+/*   Definizione variabili per il colore   */
 :root {
   --blue: #005167;
 }
 
-/*Definisco che per tutti gli elementi le zone di padding e border sono compresi in width e height*/
+
+
+/*    Definisco che per tutti gli elementi le zone di padding e border sono compresi in width e height    */
 * {
   box-sizing: border-box;
 }
 
-/*body ha un margine predefinito che elimino*/
+
+
+/*    Body ha un margine predefinito che elimino    */
 body {
   margin: 0px;
 }
 
+
+
+
+
+/*   CSS del bottone che appare per ritornare in cima alla pagina   */
 #topbutton {
   border: none;
   cursor: pointer;
@@ -30,7 +39,10 @@ body {
 
 
 
-/*CSS per header*/
+
+
+
+/*   CSS per header   */
 
 header {
   background-color: var(--blue);
@@ -61,7 +73,9 @@ header img{
 
 
 
-/*CSS relativo alla barra di navigazione laterale*/
+
+
+/*     CSS relativo alla barra di navigazione laterale    */
 .sidenav {
   height: 100%;
   width: 0;
@@ -123,7 +137,10 @@ header img{
 }
 
 
-/*Media query per avere una pagina responsiva*/
+
+
+
+/*     Media query per avere un header ed un menu' di navigazione responsivi    */
 @media (max-width:600px) {
   header{font-size: 15px;}
   .sidenav a {font-size: 24px;}
