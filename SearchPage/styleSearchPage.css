@@ -1,0 +1,244 @@
+/*        CSS dei filtri         */
+.filters {
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding-bottom: 20px;
+    margin: 8px;
+    width: 300px;
+    background-color: aliceblue;
+    position: fixed;
+    left: 15px;
+    top: 100px;
+    overflow: auto;
+}
+
+.filters #filterTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    /*In caso Lato non possa essere usato, il testo viene caricato con sans-serif*/
+}
+
+.filters legend {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Lato", sans-serif;
+}
+
+.filters fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.filters label {
+    margin-right: 3px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+}
+
+.filterbuttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.filters input[type="submit"],
+input[type="reset"] {
+    background-color: #005167;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.filters input[type="submit"]:hover,
+.filters input:hover[type="reset"] {
+    background-color: #aaa;
+}
+
+
+
+
+
+/*           CSS del contenitore di bottoni navigazione rapida + barra di ricerca + risultati della ricerca            */
+.content {
+    height: 50%;
+    position: relative;
+    top: 100px;
+    display: block;
+    margin-right: 15px;
+    margin-left: 330px;
+}
+
+
+
+
+
+
+/*    Contenitore per i bottoni per la navigazione rapida tra mappa e lista     */
+.rapid-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/*         Stile dei bottoni per la navigazione rapida tra mappa e lista          */
+.rapid-button {
+    padding: 20px 40px;
+    background-color: #005167;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    /* Dimensione del testo, con em e' relativo alla dimensione del font dell'elemento, in questo caso 1.5 volte in piu'  */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /* Transizione per hover */
+}
+
+/*     Effetto hover per i bottoni        */
+.rapid-button:hover {
+    background-color: #aaa;
+}
+
+
+
+
+
+
+
+/*                 CSS della barra di ricerca              */
+.searchbar {
+    min-width: 300px;
+    max-width: 30%;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.searchbar input[type=text] {
+    margin: 10px;
+    font-size: 17px;
+    padding: 6px;
+    font-family: "Lato", sans-serif;
+    border: none;
+    border-radius: 20px;
+    background: #f1f1f1;
+    transition: 0.5s;
+    flex: 85%;
+}
+
+.searchbar button[type="submit"] {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 12px;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+}
+
+
+
+
+
+/*         CSS per il risultato della ricerca      */
+/*  Contenitore della lista dei risultati  */
+.search-list {
+    margin: 20px 5%;
+    /*Scrittura breve con cui determinare i margini, rispettivamente ho in ordine: top-bottom left-right*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 30px 40px;
+}
+
+/*  Contenitore singolo risultato */
+.search-result {
+    background-color: aliceblue;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-result img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.search-result a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+}
+
+.search-result section {
+    padding: 15px;
+    font-family: "Lato", sans-serif;
+}
+
+/*Proprieta' necessaria per evitare eventualmente che l'immagine non sia contenuta nel bordo del contenitore*/
+.search-result::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+
+/*Media query per la responsivita'*/
+
+@media (max-width:820px) {
+
+    .search-result{
+        flex-direction: column;
+    }
+
+
+    .rapid-button-container{
+        flex-direction: column;
+        gap:15px;
+        align-items: center;
+    }
+
+    .rapid-button{
+        width: 250px;
+    }
+}

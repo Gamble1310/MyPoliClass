@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+  <title>MyPoliClass</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link all'icona della pagina accanto al titolo, type="image/x-icon" indica il tipo di dati e rel="icon" indicano 
+    cosa sia e l'utilizzo (icon come icona o apple-toch-icon per le icone degli shortcut su dispositivi apple -->
+  <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
+
+  <!-- Link ai file dell'estetica-->
+  <link rel="stylesheet" href="../Home/style.css">
+  <link rel="stylesheet" href="../SearchPage/styleSearchPage.css">
+</head>
+
+<body>
+
+  <header>
+    <span style="display: flex; flex-wrap: nowrap;">
+      <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
+      <img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></span>
+    <h1>MYPOLICLASS</h1>
+    <img src="../Home/user.svg" alt="user" width="64px" height="64px">
+  </header>
+
+  <!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
+    <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Home</a>
+    <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+    <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+    <a href="#"><img src="../Home/group-icon.svg" width="36px" height="36px">Chi siamo</a>
+  </div>
+
+  <!--Oscuramento della pagina quando e' attiva la sidenav, cliccando sulla pagina l'overlay scampare con la sidebar-->
+  <div id="overlay" onclick="closeNav()"></div>
+
+  <!--Bottone per tornare in cima alla pagina-->
+  <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg" alt="arrow-upward"
+      height="40px" width="40px"></button>
+
+  
+    <!--Menu dei filtri-->
+    <div class="filters">
+
+      <!--Titolo filtri-->
+      <div id="filterTitle">
+        <p>Filtri</p>
+        <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
+      </div>
+
+      <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
+
+        <!--Selettore grandezza-->
+        <fieldset class="filterbuttons">
+          <legend>Grandezza</legend>
+          <span><input type="radio" id="piccola" name="grandezza" value="piccola">
+            <label for="piccola">Piccola</label></span>
+          <span><input type="radio" id="media" name="grandezza" value="media">
+            <label for="media">Media</label></span>
+          <span><input type="radio" id="grande" name="grandezza" value="grande">
+            <label for="grande">Grande</label></span>
+        </fieldset>
+
+        <!--Selettore tipo-->
+        <fieldset class="filterbuttons">
+          <legend>Tipo</legend>
+          <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
+            <label for="laboratorio">Laboratorio</label></span>
+          <span><input type="radio" id="aula" name="tipo" value="aula">
+            <label for="aula">Aula</label></span>
+        </fieldset>
+
+        <!--Selettore extra-->
+        <fieldset>
+          <legend>Funzioni Extra</legend>
+          <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
+            <label for="prese">Presnza di prese elettriche</label></span><br>
+          <span><input type="checkbox" id="lim" name="extraLim" value="lim">
+            <label for="lim">Lim</label></span><br>
+          <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
+            <label for="lavagna">Lavagna</label></span><br>
+          <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
+            <label for="aria-condizonata">Aria condizionata</label></span><br>
+        </fieldset>
+
+        <!--Pulsanti per inviare o resettare i valori nel form-->
+        <div class="filterbuttons">
+          <input type="submit" value="Invia" title="Filtra i risultati">
+          <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
+        </div>
+      </form>
+    </div>
+
+    <!--Contenuto pagina-->
+
+    <!--Bottoni per la navigazione rapida tra mappa e lista-->
+    <div class="content">
+
+    
+      <br><br><br>
+
+
+      <!--Barra di ricerca-->
+      <form id="searchbar" class="searchbar">
+        <button type="submit" title="Cerca"><img src="search.svg" alt="searc-icon" height="28px" width="28px"></button>
+        <input type="text" name="search" placeholder="Ricerca..">
+      </form>
+
+
+      <!--Lista-->
+      <div class="search-list">
+
+        <div class="search-result">
+          <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+          <!--Dimensioni e altre caratteristiche nel file cssS-->
+          <section>
+            <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
+            <span class="dimensione">Numero posti:</span><br>
+            <span class="edificio">Edificio:</span><br>
+            <span class="prese">Prese elettriche:</span><br>
+            <br><a href="../Prenotazione/index.html">Vedi di più >></a>
+          </section>
+        </div>
+
+        <div class="search-result">
+          <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+          <!--Dimensioni e altre caratteristiche nel file CSS-->
+          <section>
+            <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
+            <span class="dimensione">Numero posti:</span><br>
+            <span class="edificio">Edificio:</span><br>
+            <span class="prese">Prese elettriche:</span><br>
+            <br><a href="../Prenotazione/index.html">Vedi di più >></a>
+          </section>
+        </div>
+
+        <div class="search-result">
+          <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+          <!--Dimensioni e altre caratteristiche nel file cssS-->
+          <section>
+            <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
+            <span class="dimensione">Numero posti:</span><br>
+            <span class="edificio">Edificio:</span><br>
+            <span class="prese">Prese elettriche:</span><br>
+            <br><a href="../Prenotazione/index.html">Vedi di più >></a>
+          </section>
+        </div>
+
+
+      </div>
+
+      <br><br>
+
+
+    <script type="text/javascript" src="../Home/topbutton.js"></script>
+    <script type="text/javascript" src="../Home/sidenav.js"></script>
+</body>
+
+</html>
