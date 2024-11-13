@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>MyPoliClass</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link all'icona della pagina accanto al titolo -->
+    <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
+
+    <!-- Link ai file dell'estetica-->
+    <link rel="stylesheet" href="../Home/style.css">
+    <link rel="stylesheet" href="../Login/login.css">
+</head>
+
+<body>
+    <header>
+        <span style="display: flex; flex-wrap: nowrap;">
+            <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
+            <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a></span>
+        <h1>MYPOLICLASS</h1>
+        <a href="../Login/index.html"><img src="../Home/user.svg" alt="user" width="64px" height="64px"></a>
+    </header>
+
+    <!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
+        <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Home</a>
+        <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+        <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+        <a href="#"><img src="../Home/group-icon.svg" width="36px" height="36px">Chi siamo</a>
+    </div>
+
+    <!--Oscuramento della pagina quando e' attiva la sidenav, cliccando sulla pagina l'overlay scampare con la sidebar-->
+    <div id="overlay" onclick="closeNav()"></div>
+
+    <!--Bottone per tornare in cima alla pagina-->
+    <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg"
+            alt="arrow-upward" height="40px" width="40px">
+    </button>
+
+    <div class="login">
+        <div class="loginform">
+            <form>
+                <legend>Inserire le credenziali di Esse3 per accedere alla piattaforma</legend>
+                <fieldset>
+                    <span><label>Nome utente</label><br>
+                    <input type="text" id="username" name="username" required autofocus></span><br>
+                    <span><label>Password</label><br>
+                    <input type="password" id="pwd" name="pwd" required></span><br><br>
+                    <input type="submit" value="Accedi"><br><br>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="../Home/topbutton.js"></script>
+    <script type="text/javascript" src="../Home/sidenav.js"></script>
+</body>
+
+</html>

@@ -22,9 +22,9 @@
 <header>
     <span style="display: flex; flex-wrap: nowrap;">
         <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
-        <img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></span>
+        <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a></span>
     <h1>MYPOLICLASS</h1>
-    <img src="../Home/user.svg" alt="user" width="64px" height="64px">
+    <a href="../Login/index.html"><img src="../Home/user.svg" alt="user" width="64px" height="64px"></a>
 </header>
 
 <!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
@@ -44,85 +44,101 @@
 <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg" alt="arrow-upward"
         height="40px" width="40px"></button>
 
-    <!--Menu dei filtri-->
-    <div class="filters">
+<!--Menu dei filtri-->
+<div class="filters">
 
-        <!--Titolo filtri-->
-        <div id="filterTitle">
-            <p>Filtri</p>
-            <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
-        </div>
-
-        <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
-
-            <!--Selettore grandezza-->
-            <fieldset class="filterbuttons">
-                <legend>Grandezza</legend>
-                <span><input type="radio" id="piccola" name="grandezza" value="piccola">
-                    <label for="piccola">Piccola</label></span>
-                <span><input type="radio" id="media" name="grandezza" value="media">
-                    <label for="media">Media</label></span>
-                <span><input type="radio" id="grande" name="grandezza" value="grande">
-                    <label for="grande">Grande</label></span>
-            </fieldset>
-
-            <!--Selettore tipo-->
-            <fieldset class="filterbuttons">
-                <legend>Tipo</legend>
-                <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
-                    <label for="laboratorio">Laboratorio</label></span>
-                <span><input type="radio" id="aula" name="tipo" value="aula">
-                    <label for="aula">Aula</label></span>
-            </fieldset>
-
-            <!--Selettore extra-->
-            <fieldset>
-                <legend>Funzioni Extra</legend>
-                <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
-                    <label for="prese">Presnza di prese elettriche</label></span><br>
-                <span><input type="checkbox" id="lim" name="extraLim" value="lim">
-                    <label for="lim">Lim</label></span><br>
-                <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
-                    <label for="lavagna">Lavagna</label></span><br>
-                <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
-                    <label for="aria-condizonata">Aria condizionata</label></span><br>
-            </fieldset>
-
-            <!--Pulsanti per inviare o resettare i valori nel form-->
-            <div class="filterbuttons">
-                <input type="submit" value="Invia" title="Filtra i risultati">
-                <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
-            </div>
-        </form>
+    <!--Titolo filtri-->
+    <div id="filterTitle">
+        <p>Filtri</p>
+        <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
     </div>
 
-    <!--Contenuto pagina-->
+    <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
 
-    <!--Bottoni per la navigazione rapida tra mappa e lista-->
-    <div class="content">
-        
-        <br><br>
-        <!--Immagine della paintina della grandi aule-->
-        <div class="container">
-            <img src="Grandi-aule.jpeg" usemap="#aulegrandi" alt="Grandi-aule" width="100%" height="auto">
-            <!--Aree colorate con link che porta alla pagina della prenotazione, 
+        <!--Selettore grandezza-->
+        <fieldset class="filterbuttons">
+            <legend>Grandezza</legend>
+            <span><input type="radio" id="piccola" name="grandezza" value="piccola">
+                <label for="piccola">Piccola</label></span>
+            <span><input type="radio" id="media" name="grandezza" value="media">
+                <label for="media">Media</label></span>
+            <span><input type="radio" id="grande" name="grandezza" value="grande">
+                <label for="grande">Grande</label></span>
+        </fieldset>
+
+        <!--Selettore tipo-->
+        <fieldset class="filterbuttons">
+            <legend>Tipo</legend>
+            <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
+                <label for="laboratorio">Laboratorio</label></span>
+            <span><input type="radio" id="aula" name="tipo" value="aula">
+                <label for="aula">Aula</label></span>
+        </fieldset>
+
+        <!--Selettore extra-->
+        <fieldset>
+            <legend>Funzioni Extra</legend>
+            <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
+                <label for="prese">Presnza di prese elettriche</label></span><br>
+            <span><input type="checkbox" id="lim" name="extraLim" value="lim">
+                <label for="lim">Lim</label></span><br>
+            <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
+                <label for="lavagna">Lavagna</label></span><br>
+            <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
+                <label for="aria-condizonata">Aria condizionata</label></span><br>
+        </fieldset>
+
+        <!--Pulsanti per inviare o resettare i valori nel form-->
+        <div class="filterbuttons">
+            <input type="submit" value="Invia" title="Filtra i risultati">
+            <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
+        </div>
+    </form>
+</div>
+
+<!--Contenuto pagina-->
+
+<!--Bottoni per la navigazione rapida tra mappa e lista-->
+<div class="content">
+    <h2> Mappa </h2>
+
+
+    <!--Immagine della paintina della grandi aule-->
+    <div class="container">
+        <img src="Grandi-aule.jpeg" usemap="#aulegrandi" alt="Grandi-aule" width="100%" height="auto">
+
+        <!--Aree colorate con link che porta alla pagina della prenotazione, 
             ogni aula fa parte di alcune classi per determinarne la grandezza e la posizione-->
-            <a id="A" href="../Prenotazione/index.html?class=A" class="big bottom">Aula A</a>
-            <a id="B" href="../Prenotazione/index.html?class=B" class="small_left bottom">Aula B</a>
-            <a id="C" href="../Prenotazione/index.html?class=C" class="big bottom">Aula C</a>
-            <a id="D" href="../Prenotazione/index.html?class=D" class="big top">Aula D</a>
-            <a id="E" href="../Prenotazione/index.html?class=E" class="small_left top">Aula E</a>
-            <a id="Orabona" href="../Prenotazione/index.html?class=Aula Magna Orabona" class="big top">Aula Magna
-                Orabona</a>
-            <a id="G" href="../Prenotazione/index.html?class=G" class="big bottom">Aula G</a>
-            <a id="H" href="../Prenotazione/index.html?class=H" class="small_right bottom">Aula H</a>
-            <a id="I" href="../Prenotazione/index.html?class=I" class="big bottom">Aula I</a>
-            <a id="L" href="../Prenotazione/index.html?class=l" class="big top">Aula L</a>
-            <a id="M" href="../Prenotazione/index.html?class=M" class="small_right top">Aula M</a>
-            <a id="N" href="../Prenotazione/index.html?class=N" class="big top">Aula N</a>
-        </div>
 
+        <a id="A" href="../Prenotazione/index.html?class=A" class="big bottom">Aula A
+
+            <!-- Tooltip di esempio -->
+            <span class="tooltip">
+                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <b style="text-align: center; color: #005167;">Aula A</b><br>
+                Dimensione: Grande<br>
+                Prese elettriche: Si<br>
+                Lim: Si<br>
+            </span>
+        </a>
+
+        <a id="B" href="../Prenotazione/index.html?class=B" class="small_left bottom">Aula B</a>
+        <a id="C" href="../Prenotazione/index.html?class=C" class="big bottom">Aula C</a>
+        <a id="D" href="../Prenotazione/index.html?class=D" class="big top">Aula D</a>
+        <a id="E" href="../Prenotazione/index.html?class=E" class="small_left top">Aula E</a>
+        <a id="Orabona" href="../Prenotazione/index.html?class=Aula Magna Orabona" class="big top">Aula Magna
+            Orabona</a>
+        <a id="G" href="../Prenotazione/index.html?class=G" class="big bottom">Aula G</a>
+        <a id="H" href="../Prenotazione/index.html?class=H" class="small_right bottom">Aula H</a>
+        <a id="I" href="../Prenotazione/index.html?class=I" class="big bottom">Aula I</a>
+        <a id="L" href="../Prenotazione/index.html?class=l" class="big top">Aula L</a>
+        <a id="M" href="../Prenotazione/index.html?class=M" class="small_right top">Aula M</a>
+        <a id="N" href="../Prenotazione/index.html?class=N" class="big top">Aula N</a>
     </div>
+
+
+
+</div>
 
 
 

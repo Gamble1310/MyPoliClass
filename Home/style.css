@@ -56,19 +56,30 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
-header h1{
+header h1 {
   color: #ffff;
   text-align: center;
-  font-family: "Lato", sans-serif; /*In caso Lato non possa essere usato, il testo viene caricato con sans-serif*/
+  font-family: "Lato", sans-serif;
+  /*In caso Lato non possa essere usato, il testo viene caricato con sans-serif*/
   font-weight: bold;
   transition: .5s;
+  width: 100%;
+  text-align: center;
 }
 
-header img{
+header img {
   cursor: pointer;
+  display: block;
+}
+
+/* Essendo che ho usato una flexbox per l'header ed essendo che l'elemento di sinistra e' piu' grande a causa della 
+    presenza a sinistra di due icone, all'unica icona di destra aggiungo la lunghezza della seconda icona con un margin-left, 
+    in modo tale che il nome del sito al centro sia centrato nella pagina, essendo la distanza da destra e sinistra uguale */
+header img[src="../Home/user.svg"] {
+  margin-left: 64px;
 }
 
 
@@ -96,7 +107,8 @@ header img{
   text-decoration: none;
   font-size: 36px;
   color: #f1f1f1;
-  font-family: "Lato", sans-serif; /*In caso Lato non possa essere usato, il testo viene caricato con sans-serif*/
+  font-family: "Lato", sans-serif;
+  /*In caso Lato non possa essere usato, il testo viene caricato con sans-serif*/
   text-wrap: nowrap;
   display: flex;
   align-items: center;
@@ -116,7 +128,7 @@ header img{
   margin-left: 50px;
 }
 
-.sidenav img{
+.sidenav img {
   display: block;
 }
 
@@ -130,7 +142,7 @@ header img{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   opacity: 0;
   z-index: 98;
   cursor: pointer;
@@ -142,6 +154,11 @@ header img{
 
 /*     Media query per avere un header ed un menu' di navigazione responsivi    */
 @media (max-width:600px) {
-  header{font-size: 15px;}
-  .sidenav a {font-size: 24px;}
+  header h1 {
+    display: none;
+  }
+
+  .sidenav a {
+    font-size: 24px;
+  }
 }

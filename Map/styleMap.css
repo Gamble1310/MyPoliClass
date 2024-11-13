@@ -1,19 +1,19 @@
 /*              Immagine della piantina grandi aule                 */
-img[src="Grandi-aule.jpeg"]{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: scale-down;
-  position: relative;
-  z-index: -1;
-  object-fit: cover;
+img[src="Grandi-aule.jpeg"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: scale-down;
+    position: relative;
+    z-index: -1;
+    object-fit: cover;
 }
 
 
 
 
 /*       Contenitore per l'immagine della piantina e per i link colorati al suo interno       */
-.container{
+.container {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -24,149 +24,199 @@ img[src="Grandi-aule.jpeg"]{
 
 
 /*              Area dei link colorati che ti reindirizza alle pagine delle prenotazioni          */
-.container a{
+.container a {
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    position: absolute; 
-    text-decoration: none; 
+    position: absolute;
+    text-decoration: none;
     color: black;
-    font-family: "Lato",sans-serif;
+    font-family: "Lato", sans-serif;
     height: 19.3%;
-    font-size: 1vw;/* Dimensione del testo in viewport widith, % della larghezza dello schermo utilizzato*/
+    font-size: 1vw;
+    /* Dimensione del testo in viewport widith, % della larghezza dello schermo utilizzato*/
 }
 
 /*               Lunghezze
-                 standerd delle aule (l'altezza e' tra le caratteristiche comuni a tutti)                  */ 
-.big{
+                 standerd delle aule (l'altezza e' tra le caratteristiche comuni a tutti)                  */
+.big {
     width: 6.6%;
 }
 
-.small_left{
+.small_left {
     width: 4.4%;
 }
 
-.small_right{
+.small_right {
     width: 4%;
 }
 
 /*        Posizioni su o giu' standard delle aule (la posizione da sinistra cambia invace per ogni coppia di aule)        */
-.top{
-   top: 21%; 
+.top {
+    top: 21%;
 }
 
-.bottom{
+.bottom {
     top: 53.5%
 }
 
 /*     Posizione da sinistra e colore specifici di ogni aula    */
-#A{ 
-    left:45.5%;
+#A {
+    left: 45.5%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#B{ 
-    left:52.4%;
+#B {
+    left: 52.4%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#C{ 
-    left:57%;
+#C {
+    left: 57%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#D{ 
-    left:45.5%;
+#D {
+    left: 45.5%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#E{ 
-    left:52.4%;
+#E {
+    left: 52.4%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#Orabona{ 
-    left:57%;
+#Orabona {
+    left: 57%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#G{ 
-    left:66.8%;
+#G {
+    left: 66.8%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#H{ 
-    left:73.7%;
+#H {
+    left: 73.7%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#I{ 
-    left:78%;
+#I {
+    left: 78%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#L{ 
-    left:78%;
+#L {
+    left: 78%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#M{ 
-    left:73.7%;
+#M {
+    left: 73.7%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
-#N{ 
-    left:66.8%;
+#N {
+    left: 66.8%;
     background-color: rgba(29, 186, 29, 0.5);
 }
 
 /* Hover più chiaro per ogni aula               */
-#A:hover { 
+#A:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#B:hover { 
+#B:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#C:hover { 
+#C:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#D:hover { 
+#D:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#E:hover { 
+#E:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#Orabona:hover { 
+#Orabona:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#G:hover { 
+#G:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#H:hover { 
+#H:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#I:hover { 
+#I:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#L:hover { 
+#L:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#M:hover { 
+#M:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
-#N:hover { 
+#N:hover {
     background-color: rgba(102, 255, 102, 0.5);
 }
 
+
+
+
+
+/*       Tooltip della mappa     */
+.container a .tooltip {
+    visibility: hidden;
+    font-size: 15px;
+    text-align: left;
+    width: 250px;
+    background-color: white;
+    color: black;
+    border: 3px solid #005167;
+    border-radius: 10px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+    text-wrap: nowrap;
+}
+
+.container a img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 4px;
+    float: left;
+}
+
+/*Questa sezione serve a creare la freccia sotto la tooltip*/
+.container a .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 2px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #005167 transparent transparent transparent;
+}
+
+.container a:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
