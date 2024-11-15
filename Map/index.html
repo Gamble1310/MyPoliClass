@@ -44,68 +44,14 @@
 <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg" alt="arrow-upward"
         height="40px" width="40px"></button>
 
-<!--Menu dei filtri-->
-<div class="filters">
-
-    <!--Titolo filtri-->
-    <div id="filterTitle">
-        <p>Filtri</p>
-        <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
-    </div>
-
-    <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
-
-        <!--Selettore grandezza-->
-        <fieldset class="filterbuttons">
-            <legend>Grandezza</legend>
-            <span><input type="radio" id="piccola" name="grandezza" value="piccola">
-                <label for="piccola">Piccola</label></span>
-            <span><input type="radio" id="media" name="grandezza" value="media">
-                <label for="media">Media</label></span>
-            <span><input type="radio" id="grande" name="grandezza" value="grande">
-                <label for="grande">Grande</label></span>
-        </fieldset>
-
-        <!--Selettore tipo-->
-        <fieldset class="filterbuttons">
-            <legend>Tipo</legend>
-            <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
-                <label for="laboratorio">Laboratorio</label></span>
-            <span><input type="radio" id="aula" name="tipo" value="aula">
-                <label for="aula">Aula</label></span>
-        </fieldset>
-
-        <!--Selettore extra-->
-        <fieldset>
-            <legend>Funzioni Extra</legend>
-            <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
-                <label for="prese">Presnza di prese elettriche</label></span><br>
-            <span><input type="checkbox" id="lim" name="extraLim" value="lim">
-                <label for="lim">Lim</label></span><br>
-            <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
-                <label for="lavagna">Lavagna</label></span><br>
-            <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
-                <label for="aria-condizonata">Aria condizionata</label></span><br>
-        </fieldset>
-
-        <!--Pulsanti per inviare o resettare i valori nel form-->
-        <div class="filterbuttons">
-            <input type="submit" value="Invia" title="Filtra i risultati">
-            <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
-        </div>
-    </form>
-</div>
-
 <!--Contenuto pagina-->
-
-<!--Bottoni per la navigazione rapida tra mappa e lista-->
-<div class="content">
-    <h2> Mappa </h2>
+<div class="map-page">
+    <h2> Mappa Grandi Aule </h2>
 
 
     <!--Immagine della paintina della grandi aule-->
     <div class="container">
-        <img src="Grandi-aule.jpeg" usemap="#aulegrandi" alt="Grandi-aule" width="100%" height="auto">
+        <img src="Grandi-aule.jpeg" alt="Grandi-aule" width="100%" height="auto">
 
         <!--Aree colorate con link che porta alla pagina della prenotazione, 
             ogni aula fa parte di alcune classi per determinarne la grandezza e la posizione-->

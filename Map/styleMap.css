@@ -1,3 +1,17 @@
+/*   Contenitore di tutta la pagina  */
+.map-page{
+    margin-top:100px;
+    
+}
+
+.map-page h2 {text-align: center;
+    font-family: "Lato", sans-serif;
+    color:#005167;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
 /*              Immagine della piantina grandi aule                 */
 img[src="Grandi-aule.jpeg"] {
     display: block;
@@ -17,13 +31,14 @@ img[src="Grandi-aule.jpeg"] {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
 }
 
 
 
 
 /*              Area dei link colorati che ti reindirizza alle pagine delle prenotazioni          */
+/*           !!!Attenzione la posizione delle aree colorate e' relazionata alla classe .container */
 .container a {
     display: flex;
     text-align: center;
