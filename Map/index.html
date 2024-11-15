@@ -20,21 +20,28 @@
 
 <!--Per l'header ho usato una flexbox-->
 <header>
-    <span style="display: flex; flex-wrap: nowrap;">
-        <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
-        <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a></span>
-    <h1>MYPOLICLASS</h1>
-    <a href="../Login/index.html"><img src="../Home/user.svg" alt="user" width="64px" height="64px"></a>
+    <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
+    <span>
+        <h1>MYPOLICLASS </h1>
+        <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
+    </span>
+    <i width="64px"></i>
+    <!-- Questo elemento vuoto mi serve per far in modo che il nome del sito sia centrato, poiche' per l'header uso una flexbox con justify-content: spacebetween;-->
 </header>
 
 <!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
-    <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Home</a>
+    <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
+    <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Dashboard</a>
     <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
     <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-    <a href="#"><img src="../Home/group-icon.svg" width="36px" height="36px">Chi siamo</a>
+    <a href="#"><img src="../Home/reservation.svg" width="36px" height="36px">Prenotazioni <br> &nbsp; effettuate</a>
+    <!-- &nbsp; simbolo del carattere di spaziatura-->
+    <!-- Icona per il logout -->
+    <a href="../Login/index.html" class="logout"><img src="../Home/logout.svg" alt="logout" width="64px"
+            height="64px"></a>
 </div>
 
 <!--Oscuramento della pagina quando e' attiva la sidenav, cliccando sulla pagina l'overlay scampare con la sidebar-->

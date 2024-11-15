@@ -56,7 +56,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 header h1 {
@@ -75,15 +74,12 @@ header img {
   display: block;
 }
 
-/* Essendo che ho usato una flexbox per l'header ed essendo che l'elemento di sinistra e' piu' grande a causa della 
-    presenza a sinistra di due icone, all'unica icona di destra aggiungo la lunghezza della seconda icona con un margin-left, 
-    in modo tale che il nome del sito al centro sia centrato nella pagina, essendo la distanza da destra e sinistra uguale */
-header img[src="../Home/user.svg"] {
-  margin-left: 64px;
+header span {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap:10px;
 }
-
-
-
 
 
 /*     CSS relativo alla barra di navigazione laterale    */
@@ -116,9 +112,6 @@ header img[src="../Home/user.svg"] {
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
-}
 
 .sidenav .closebtn {
   position: absolute;
@@ -128,9 +121,31 @@ header img[src="../Home/user.svg"] {
   margin-left: 50px;
 }
 
+.sidenav .logout {
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  margin-left: 50px;
+}
+
 .sidenav img {
   display: block;
 }
+
+.profileimg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 15px auto;
+}
+
+/* Uso un filto CSS per applicare l'ombra sia a testo che icone
+    tramite la funzione drop-shadow*/
+.sidenav a:hover {
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.8));
+}
+
+
 
 /*Oscuramento della pagina quando e' presente la sidenav*/
 #overlay {
@@ -154,7 +169,7 @@ header img[src="../Home/user.svg"] {
 
 /*     Media query per avere un header ed un menu' di navigazione responsivi    */
 @media (max-width:600px) {
-  header h1 {
+  header h1, i {
     display: none;
   }
 
