@@ -20,7 +20,7 @@
 
   <!--Per l'header ho usato una flexbox-->
   <header>
-    <img src="../Home/menu-icon.svg" alt="menu" style="width:64px; height:64px; padding: 7px;" onclick="openNav()">
+    <img src="../Home/menu-icon.svg" alt="menu" class="navbarIcon" onclick="openNav()">
     <span>
       <h1>MYPOLICLASS </h1>
       <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
@@ -38,6 +38,7 @@
     <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
     <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
     <a href="#"><img src="../Home/reservation.svg" width="36px" height="36px">Prenotazioni <br> &nbsp; effettuate</a>
+    <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
     <!-- &nbsp; simbolo del carattere di spaziatura-->
     <!-- Icona per il logout -->
     <a href="../Login/index.html" class="logout"><img src="../Home/logout.svg" alt="logout" width="64px"
@@ -68,19 +69,8 @@
         <legend>Grandezza</legend>
         <span><input type="radio" id="piccola" name="grandezza" value="piccola">
           <label for="piccola">Piccola</label></span>
-        <span><input type="radio" id="media" name="grandezza" value="media">
-          <label for="media">Media</label></span>
         <span><input type="radio" id="grande" name="grandezza" value="grande">
           <label for="grande">Grande</label></span>
-      </fieldset>
-
-      <!--Selettore tipo-->
-      <fieldset class="filterbuttons">
-        <legend>Tipo</legend>
-        <span><input type="radio" id="laboratorio" name="tipo" value="laboratorio">
-          <label for="laboratorio">Laboratorio</label></span>
-        <span><input type="radio" id="aula" name="tipo" value="aula">
-          <label for="aula">Aula</label></span>
       </fieldset>
 
       <!--Selettore extra-->

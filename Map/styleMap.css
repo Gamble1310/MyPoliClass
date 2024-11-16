@@ -1,12 +1,13 @@
 /*   Contenitore di tutta la pagina  */
-.map-page{
-    margin-top:100px;
-    
+.map-page {
+    margin-top: 100px;
+
 }
 
-.map-page h2 {text-align: center;
+.map-page h2 {
+    text-align: center;
     font-family: "Lato", sans-serif;
-    color:#005167;
+    color: #005167;
     font-size: 36px;
     font-weight: bold;
 }

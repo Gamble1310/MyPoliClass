@@ -2,32 +2,18 @@
 <html lang="it">
 
 <head>
+
     <title>MyPoliClass</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Link all'icona della pagina accanto al titolo -->
+    <!-- Link all'icona della pagina accanto al titolo, type="image/x-icon" indica il tipo di dati e rel="icon" indicano 
+    cosa sia e l'utilizzo (icon come icona o apple-toch-icon per le icone degli shortcut su dispositivi apple -->
     <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
 
     <!-- Link ai file dell'estetica-->
     <link rel="stylesheet" href="../Home/style.css">
 
-    <script>
-        // Funzione per ottenere il valore del parametro "class" dalla URL
-        function getClassNameFromURL() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get("class") || "N/A"; // Restituisce "N/A" se il parametro non è presente
-        }
-
-        // Aggiorna il testo della prenotazione con il nome dell'aula
-        function updateClassName() {
-            const className = getClassNameFromURL();
-            document.getElementById("class-name").textContent = className;
-        }
-
-        // Esegue la funzione al caricamento della pagina
-        window.onload = updateClassName;
-    </script>
 </head>
 
 <body>
@@ -51,7 +37,8 @@
         <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Dashboard</a>
         <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
         <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-        <a href="#"><img src="../Home/reservation.svg" width="36px" height="36px">Prenotazioni <br> &nbsp;effettuate</a>
+        <a href="#"><img src="../Home/reservation.svg" width="36px" height="36px">Prenotazioni <br> &nbsp;
+            effettuate</a>
         <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
         <!-- &nbsp; simbolo del carattere di spaziatura-->
         <!-- Icona per il logout -->
@@ -65,11 +52,6 @@
     <!--Bottone per tornare in cima alla pagina-->
     <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg"
             alt="arrow-upward" height="40px" width="40px"></button>
-
-    <!--Contenitore contenuto pagina-->
-
-
-    <p style="margin-top: 100px;">Prenotazione aula <span id="class-name">...</span></p>
 
 
     <script type="text/javascript" src="../Home/topbutton.js"></script>

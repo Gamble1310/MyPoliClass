@@ -26,7 +26,7 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #005167;
+  background-color: var(--blue);
   z-index: 99;
   position: fixed;
   padding: 4px;
@@ -78,9 +78,21 @@ header span {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap:10px;
+  gap: 10px;
 }
 
+
+.navbarIcon {
+  width: 64px;
+  height: 64px;
+  padding: 7px;
+}
+
+/* Uso un filto CSS per applicare l'ombra all'icona
+    tramite la funzione drop-shadow*/
+.navbarIcon:hover {
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.8));
+}
 
 /*     CSS relativo alla barra di navigazione laterale    */
 .sidenav {
@@ -169,7 +181,9 @@ header span {
 
 /*     Media query per avere un header ed un menu' di navigazione responsivi    */
 @media (max-width:600px) {
-  header h1, i {
+
+  header h1,
+  i {
     display: none;
   }
 
