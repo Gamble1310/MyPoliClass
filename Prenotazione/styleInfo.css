@@ -1,0 +1,102 @@
+/*    CSS del contenuto della pagine con le informazioni delle aule    */
+.page-content {
+    margin-top: 90px;
+}
+
+.page-content h2 {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    color: #005167;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-content p{
+    text-align: center;
+    font-size: 26px;
+    font-family: "Lato", sans-serif;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+/*    Css relativo alla descrizione dell'aula + Calendario    */
+.aula-info{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+/*      Css contenitore informazioni aula     */
+.aula-descr{
+    flex: 60%;
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*      Dati dell'aula       */
+.data{
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    width: 50%;
+}
+
+/*     Nome dell'aula nei dati    */
+.aula-name{
+    color:#005167;
+    text-align: center;
+    font-family: "Lato",sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/*     Immagine dell'aula nella descrizione      */
+.aula-img{
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/*        Mappa dell'edificio dell'aula fatta in modo che sia evidenziata l'aula a cui si riferisce la pagina (WIP)        */
+.aula-map{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/*       Descrizione della posizione dell'aula     */
+.position-descr{
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    width: 40%;
+    margin-top: 5%;
+}
+
+
+
+
+
+
+/*       Calendario da cui si possono prenotare le fasce orarie determinate      */
+.calendar{
+    flex: 35%;
+    border: 3px solid #ddd;
+    background-color: tomato;
+}

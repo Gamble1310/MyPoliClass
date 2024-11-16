@@ -38,6 +38,7 @@ body{
     border-radius: 25px;
     border: none;
     padding: 10px 15px;
+    color: #333;
 }
 
 .loginform input[type=submit]{
@@ -54,7 +55,6 @@ body{
 
 .loginform input[type=submit]:hover {
     cursor: pointer;
-    
     color:#005167;
     background-color: #ddd;
 }

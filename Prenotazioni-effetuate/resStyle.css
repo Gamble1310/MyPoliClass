@@ -24,6 +24,8 @@ h2{
     padding: 30px 40px;
 }
 
+
+/*    CSS degli elelmenti della lista delle prenotazioni  */
 .resItem{
     background-color: aliceblue;
     border: 2px solid #ccc;
@@ -61,7 +63,7 @@ h2{
     display: table;
 }
 
-/*  Css del bottone per cancellare le prenotazioni  */
+/*    Css del bottone per cancellare le prenotazioni    */
 #delBtn{
   border: none;
   cursor: pointer;

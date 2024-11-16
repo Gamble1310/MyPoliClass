@@ -11,23 +11,8 @@
 
     <!-- Link ai file dell'estetica-->
     <link rel="stylesheet" href="../Home/style.css">
+    <link rel="stylesheet" href="../Prenotazione/styleInfo.css">
 
-    <script>
-        // Funzione per ottenere il valore del parametro "class" dalla URL
-        function getClassNameFromURL() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get("class") || "N/A"; // Restituisce "N/A" se il parametro non è presente
-        }
-
-        // Aggiorna il testo della prenotazione con il nome dell'aula
-        function updateClassName() {
-            const className = getClassNameFromURL();
-            document.getElementById("class-name").textContent = className;
-        }
-
-        // Esegue la funzione al caricamento della pagina
-        window.onload = updateClassName;
-    </script>
 </head>
 
 <body>
@@ -69,13 +54,53 @@
             alt="arrow-upward" height="40px" width="40px"></button>
 
     <!--Contenitore contenuto pagina-->
+    <div class="page-content">
+        <h2>Informazioni sull'Aula</h2>
+        <p>Prenotazione aula <span id="class-name">...</span></p>
+
+        <!-- Contenitore delle informazioni dell'aula -->
+        <div class="aula-info">
+
+            <!-- Conteniteore della descrizione dell'aula -->
+            <div class="aula-descr">
+
+                <!-- Dati dell'aula -->
+                <span class="data"><span class="aula-name">AULA: <span id="class-name">...</span></span><br>
+                    Codice aula:...<br>
+                    Grandezza:...<br>
+                    Edificio:...<br>
+                    Piano:...<br>
+                    Lim:...<br>
+                    Prese:...<br></span>
+                <!-- Immagine dell'aula desiderata -->
+                <img src="../Prenotazione/aula-esempio.jpg" alt="Foto aula" class="aula-img">
+
+                <!-- Mappa in cui dovrebbe essere evidenziata l'aula deasiderata (WIP) -->
+                <img src="../Dashboard/mapview.png" alt="Psizione aula" class="aula-map">
+                <!-- Descrizione della posizione (WIP) -->
+                <span class="position-descr"><span class="aula-name">POSIZIONE AULA</span><br>
+                    Clicca sull'immagine per aprire la mappa dell'edificio in cui si trova l'aula</span>
 
 
-    <p style="margin-top: 100px;">Prenotazione aula <span id="class-name">...</span></p>
+            </div>
+
+            <!-- Calendario da cui prenotare la lezione (WIP)
+             (le funzioni sono ancora da determinare con precisione; idee: 
+              1. far in modo che se si arriva dalla pagina di ricerca, venga presa la data inserita e riportata automaticamente sul calendario;
+              2. far in modo che in base alle dispoinibilita' dell'aula in un giorno, il giorno sul calendario sia colorato diversamente)-->
+            <div class="calendar">
+                <input type="date">
+            </div>
+
+            
+        </div>
+
+    </div>
 
 
     <script type="text/javascript" src="../Home/topbutton.js"></script>
     <script type="text/javascript" src="../Home/sidenav.js"></script>
+    <script type="text/javascript" src="../Prenotazione/name.js"></script>
 </body>
 
 </html>

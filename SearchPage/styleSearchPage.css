@@ -208,7 +208,7 @@ input[type="reset"] {
   }
   
   .pagination a {
-    color: black;
+    color: #333;
     float: left;
     padding: 8px 16px;
     text-decoration: none;

@@ -38,6 +38,7 @@ body{
     border-radius: 25px;
     border: none;
     padding: 10px 15px;
+    color: #333;
 }
 
 .registrationform input[type=submit]{
