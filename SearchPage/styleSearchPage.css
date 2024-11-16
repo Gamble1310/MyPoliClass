@@ -75,7 +75,7 @@ input[type="reset"] {
 
 
 
-/*           CSS del contenitore di bottoni navigazione rapida + barra di ricerca + risultati della ricerca            */
+/*           CSS del contenitore di barra di ricerca + risultati della ricerca            */
 .content {
     height: 50%;
     position: relative;
@@ -93,37 +93,6 @@ input[type="reset"] {
     font-weight: bold;
 }
 
-
-
-
-
-/*    Contenitore per i bottoni per la navigazione rapida tra mappa e lista     */
-.rapid-button-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-/*         Stile dei bottoni per la navigazione rapida tra mappa e lista          */
-.rapid-button {
-    padding: 20px 40px;
-    background-color: #005167;
-    color: white;
-    font-weight: bold;
-    font-size: 1.5em;
-    /* Dimensione del testo, con em e' relativo alla dimensione del font dell'elemento, in questo caso 1.5 volte in piu'  */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    /* Transizione per hover */
-}
-
-/*     Effetto hover per i bottoni        */
-.rapid-button:hover {
-    background-color: #aaa;
-}
 
 
 
@@ -268,14 +237,4 @@ input[type="reset"] {
         flex-direction: column;
     }
 
-
-    .rapid-button-container{
-        flex-direction: column;
-        gap:15px;
-        align-items: center;
-    }
-
-    .rapid-button{
-        width: 250px;
-    }
 }

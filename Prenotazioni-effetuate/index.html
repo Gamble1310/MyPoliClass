@@ -35,10 +35,11 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
         <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
-        <a href="#"><img src="../Home/home-icon.svg" width="36px" height="36px">Dashboard</a>
+        <a href="../Dashboard/index.html"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
         <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
         <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-        <a href="#"><img src="../Home/reservation.svg" width="36px" height="36px">Prenotazioni <br> &nbsp;
+        <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px"
+                height="36px">Prenotazioni <br> &nbsp;
             effettuate</a>
         <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
         <!-- &nbsp; simbolo del carattere di spaziatura-->
@@ -57,10 +58,10 @@
     <div class="page-content">
         <h2> Prenotazioni effettuate </h2>
 
-        <!--Lista delle prenotazioni fatte-->
+        <!--Lista delle prenotazioni fatte (reservation list)-->
         <div class="resList">
 
-
+            <!-- Singola prenotazione (reservation item)-->
             <div class="resItem">
                 <img class="resImg" src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
                 <!--Dimensioni e altre caratteristiche nel file cssS-->
@@ -75,7 +76,8 @@
                     <br><a href="../Prenotazione/index.html">Vedi di più &raquo;</a>
                     <!-- &raquo; sono le doppie frecce >> -->
                     <button type="button" id="delBtn" title="Cancella prenotazione" onclick=""><img
-                            src="../Prenotazioni-effetuate/delete.svg" alt="Cancella" style="width:40px; height:40px;"></button>
+                            src="../Prenotazioni-effetuate/delete.svg" alt="Cancella"
+                            style="width:40px; height:40px;"></button>
                 </section>
             </div>
 
