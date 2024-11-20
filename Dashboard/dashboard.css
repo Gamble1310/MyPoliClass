@@ -6,7 +6,7 @@
 .dashboard-content h2 {
     text-align: center;
     font-family: "Lato", sans-serif;
-    color: #005167;
+    color: #2d4b65;
     font-size: 42px;
     font-weight: bold;
 }
@@ -38,7 +38,7 @@
 }
 
 .dashboard-flexitem p{
-    color:#005167;
+    color:#2d4b65;
     font-weight: bold;
     font-size: 32px;
 }
@@ -56,4 +56,13 @@
 .dashboard-flexitem:hover{
     box-shadow: 10px 10px 20px rgba(0,0,0,0.6);
     flex: 50%;
+}
+
+
+/*   Media query per una pagine responsiva in base alla dimen sione della finestra*/
+@media (max-width:600px) {
+    .dashboard-flexbox{
+        flex-direction: column;
+        gap: 25px;
+    }
 }

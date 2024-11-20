@@ -53,7 +53,7 @@
 
 .filters input[type="submit"],
 input[type="reset"] {
-    background-color: #005167;
+    background-color: #2d4b65;
     color: white;
     font-size: 20px;
     border-radius: 5px;
@@ -72,6 +72,41 @@ input[type="reset"] {
 }
 
 
+/*  Css del dropdown menu in cui ci sono i filtri*/
+
+.dropdownBtn{
+    background-color: aliceblue;
+    padding: 12px;
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.dropdownBtn:hover {
+    text-decoration: underline;
+}
+
+#dropdownMenu {
+    display: none;
+}
+
+
+/* Definisce il tempo in cui la transizione avviene, che in questo caso si ha con il click sul bottone,
+    che va a invacare la funzione relativa al dropdown nel file js*/
+#dropArrow{
+    transition: .5s;
+}
+
+
+
+
 
 
 
@@ -88,7 +123,7 @@ input[type="reset"] {
 .content h2{
     text-align: center;
     font-family: "Lato", sans-serif;
-    color:#005167;
+    color:#2d4b65;
     font-size: 36px;
     font-weight: bold;
 }
@@ -219,7 +254,7 @@ input[type="reset"] {
   }
   
   .pagination a.active {
-    background-color: #005167;
+    background-color: #2d4b65;
     color: white;
   }
   

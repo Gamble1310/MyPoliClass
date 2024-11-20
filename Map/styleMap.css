@@ -7,7 +7,7 @@
 .map-page h2 {
     text-align: center;
     font-family: "Lato", sans-serif;
-    color: #005167;
+    color: #2d4b65;
     font-size: 36px;
     font-weight: bold;
 }
@@ -199,7 +199,7 @@ img[src="Grandi-aule.jpeg"] {
     width: 250px;
     background-color: white;
     color: #333;
-    border: 3px solid #005167;
+    border: 3px solid #2d4b65;
     border-radius: 10px;
     padding: 5px 0;
     position: absolute;
@@ -229,7 +229,7 @@ img[src="Grandi-aule.jpeg"] {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #005167 transparent transparent transparent;
+    border-color: #2d4b65 transparent transparent transparent;
 }
 
 .container a:hover .tooltip {

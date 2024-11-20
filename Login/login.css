@@ -8,7 +8,7 @@ body{
 .loginform{
     display: block;
     background-color: aliceblue;
-    color:#005167;
+    color:#2d4b65;
     width: 300px;
     float: right;
     margin-top: 100px;
@@ -45,7 +45,7 @@ body{
     font-weight: bold;
     font-size: 18px;
     margin: auto;
-    background-color: #005167;
+    background-color: #2d4b65;
     color: white;
     border-radius: 25px;
     border: none;
@@ -55,7 +55,7 @@ body{
 
 .loginform input[type=submit]:hover {
     cursor: pointer;
-    color:#005167;
+    color:#2d4b65;
     background-color: #ddd;
 }
 

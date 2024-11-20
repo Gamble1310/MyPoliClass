@@ -37,13 +37,12 @@
     <a href="../Dashboard/index.html"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
     <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
     <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-    <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px"
-        height="36px">Prenotazioni <br> &nbsp;
-      effettuate</a>
+    <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie
+      Prenotazioni</a>
     <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
     <!-- &nbsp; simbolo del carattere di spaziatura-->
     <!-- Icona per il logout -->
-    <a href="../Login/index.html" class="logout"><img src="../Home/logout.svg" alt="logout" width="64px"
+    <a href="../Login/index.html" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px"
         height="64px"></a>
   </div>
 
@@ -61,12 +60,12 @@
     <!--Titolo filtri-->
     <div id="filterTitle">
       <p>Filtri</p>
-      <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px" ;></p>
+      <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px"></p>
     </div>
 
-    <form><!--Aggiungere la destinzazione dei dati inseriti nel form-->
+    <form><!--   Aggiungere la destinzazione dei dati inseriti nel form    -->
 
-      <!--Selettore grandezza-->
+      <!--   Selettore grandezza    -->
       <fieldset class="filterbuttons">
         <legend>Grandezza</legend>
         <span><input type="radio" id="piccola" name="grandezza" value="piccola">
@@ -75,18 +74,27 @@
           <label for="grande">Grande</label></span>
       </fieldset>
 
-      <!--Selettore extra-->
-      <fieldset>
-        <legend>Funzioni Extra</legend>
+
+      <!--  Selettore dei filtri aggiuntivi   -->
+
+      <!-- Essendo dentro un form e' molto importante definire che il tipo sia button,
+           poichè di default tutti i bottoni nei form eseguonao una submit, ma questo non e'
+           voluto in questo caso ed e' molto importante che il bottone esegua la sua funzione senza submit, altrimenti non funziona-->
+      <button type="button" onclick="toggleDropdown()" class="dropdownBtn"> Filtri Aggiuntivi 
+        <img src="../SearchPage/dropdown-arrow.svg" alt="dropdown" style="height: 36px;width: 36px;" id="dropArrow"></button>
+
+      <!-- Contenitore dei filtri aggiuntivi, che appare a schermo quando si clicca sul bottone col nome filti aggiuntivi -->
+      <fieldset id="dropdownMenu">
         <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
           <label for="prese">Presnza di prese elettriche</label></span><br>
         <span><input type="checkbox" id="lim" name="extraLim" value="lim">
           <label for="lim">Lim</label></span><br>
-        <span><input type="checkbox" id="lavagna" name="extraLavagna" value="lavagna">
-          <label for="lavagna">Lavagna</label></span><br>
+        <span><input type="checkbox" id="connessione" name="extraConnessione" value="connessione">
+          <label for="connessione">Connessione</label></span><br>
         <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
           <label for="aria-condizonata">Aria condizionata</label></span><br>
       </fieldset>
+
 
       <!--Pulsanti per inviare o resettare i valori nel form-->
       <div class="filterbuttons">
@@ -113,7 +121,7 @@
 
       <div class="search-result">
         <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
-        <!--Dimensioni e altre caratteristiche nel file cssS-->
+        <!--Dimensioni e altre caratteristiche nel file css-->
         <section>
           <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
           <span class="dimensione">Numero posti:</span><br>
@@ -168,6 +176,7 @@
 
     <script type="text/javascript" src="../Home/topbutton.js"></script>
     <script type="text/javascript" src="../Home/sidenav.js"></script>
+    <script type="text/javascript" src="../SearchPage/dropdown.js"></script>
 </body>
 
 </html>
