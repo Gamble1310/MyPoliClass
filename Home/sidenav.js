@@ -1,11 +1,17 @@
+// Javascript per il contollo della sidenav a scompara
+
+const navbar = document.getElementById("mySidenav");
+const overlay = document.getElementById("overlay");
+
+
 function openNav() {
-    document.getElementById("mySidenav").style.width = "40%";
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById("overlay").style.opacity = "0.6";
+    navbar.style.width = "40%";
+    overlay.style.display = "block";
+    overlay.style.opacity = "0.6";
   }
   
   function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("overlay").style.opacity = "0";
+    navbar.style.width = "0";
+    overlay.style.display = "none";
+    overlay.style.opacity = "0";
   }

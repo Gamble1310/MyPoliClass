@@ -14,6 +14,24 @@
   <!-- Link ai file dell'estetica-->
   <link rel="stylesheet" href="../Home/style.css">
   <link rel="stylesheet" href="../SearchPage/styleSearchPage.css">
+
+
+  <script>
+    function searchResults() {
+      const query = document.getElementById("search").value.toLowerCase().replace(/\s+/g, ""); // Rimuove tutti gli spazi dalla query
+      const results = document.querySelectorAll(".search-result");
+  
+      results.forEach((result) => {
+        const aulaName = result.querySelector(".aula-name").innerText.toLowerCase().replace(/\s+/g, ""); // Rimuove tutti gli spazi dal nome aula
+        if (aulaName.includes(query)) {
+          result.style.display = ""; // Mostra se corrisponde
+        } else {
+          result.style.display = "none"; // Nascondi se non corrisponde
+        }
+      });
+    }
+    
+  </script>
 </head>
 
 <body>
@@ -116,46 +134,87 @@
     </form>
 
 
-    <!--Lista-->
+
+      <!-- Lista dinamica -->
     <div class="search-list">
-
-      <div class="search-result">
-        <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
-        <!--Dimensioni e altre caratteristiche nel file css-->
-        <section>
-          <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
-          <span class="dimensione">Numero posti:</span><br>
-          <span class="edificio">Edificio:</span><br>
-          <span class="prese">Prese elettriche:</span><br>
-          <br><a href="../Prenotazione/index.html">Vedi di più &raquo;</a> <!-- &raquo; sono le doppie frecce >> -->
-        </section>
+      <?php
+          require_once('../config.php');
+          
+          // Raccolta dati dai filtri
+          $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
+          $prese = isset($_POST['extraPrese']) ? true : false;
+          $lim = isset($_POST['extraLim']) ? true : false;
+          $connessione = isset($_POST['extraConnessione']) ? true : false;
+          $aria = isset($_POST['extraAC']) ? true : false;
+          $reset=isset($_POST['reset']) ? true : false;
+          // Costruzione della query
+          $query = "SELECT Nome_Aula, Numero_Posti, Piano, Prese, Aria, Descrizione, Immagine, Connessione, Lim FROM aule WHERE 1=1";
+          
+          if($reset==false)
+          {
+          
+          
+          // Filtro per grandezza
+          if ($grandezza) {
+              if ($grandezza == "piccola") {
+                  $query .= " AND Tipologia='Piccola'"; 
+              } elseif ($grandezza == "grande") {
+                  $query .= " AND Tipologia='Grande'";
+              }
+          }
+          
+          // Filtro per prese
+          if ($prese) {
+              $query .= " AND Prese = 1";
+          }
+          
+          // Filtro per Lim
+          if ($lim) {
+              $query .= " AND Lim = 1";
+          }
+          
+          // Filtro per Connessione internet
+          if ($connessione) {
+              $query .= " AND Connessione = 1";
+          }
+          
+          // Filtro per aria condizionata
+          if ($aria) {
+              $query .= " AND Aria = 1";
+          }
+          }
+          
+          // Esecuzione della query
+          $result = $mysqli->query($query);
+          
+          // Mostra i risultati
+          if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<a href="../Prenotazione/index.html" class="search-result-link">';
+                  echo '<div class="search-result" >';
+                  echo '<img src="' . $row['Immagine'] . '" alt="Immagine aula">';
+                  echo '<section>';
+                  echo '<span class="aula-name"><b>' . 'AULA-' . $row['Nome_Aula'] . '</b><br><br></span>';
+                  echo '<span class="dimensione">Numero posti: ' . $row['Numero_Posti'] . '</span><br>';
+                  echo '<span class="edificio">Piano: ' . $row['Piano'] . '</span><br>';
+                  echo '<span class="prese">Prese elettriche: ' . ($row['Prese'] ? 'Sì' : 'No') . '</span><br>';
+                  echo '<span class="aria">Aria condizionata: ' . ($row['Aria'] ? 'Sì' : 'No') . '</span><br>';
+                  echo '<span class="lim">Presenza Lim: ' . ($row['Lim'] ? 'Sì' : 'No') . '</span><br>';
+                  echo '<span class="connessione">Connessione internet: ' . ($row['Connessione'] ? 'Sì' : 'No') . '</span><br>';
+                  echo '</section>';
+                  echo '</div>';
+                echo '</a>';
+              }
+          } else {
+              echo '<p> Nessun risultato soddisfa i requisiti della ricerca </p>';
+          }
+          
+          
+          
+          $mysqli->close();
+      ?>
+      
       </div>
-
-      <div class="search-result">
-        <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
-        <!--Dimensioni e altre caratteristiche nel file CSS-->
-        <section>
-          <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
-          <span class="dimensione">Numero posti:</span><br>
-          <span class="edificio">Edificio:</span><br>
-          <span class="prese">Prese elettriche:</span><br>
-          <br><a href="../Prenotazione/index.html">Vedi di più &raquo;</a> <!-- &raquo; sono le doppie frecce >> -->
-        </section>
-      </div>
-
-      <div class="search-result">
-        <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
-        <!--Dimensioni e altre caratteristiche nel file cssS-->
-        <section>
-          <span class="aula-name"><b>AULA A(esempio)</b><br><br></span>
-          <span class="dimensione">Numero posti:</span><br>
-          <span class="edificio">Edificio:</span><br>
-          <span class="prese">Prese elettriche:</span><br>
-          <br><a href="../Prenotazione/index.html">Vedi di più &raquo;</a> <!-- &raquo; sono le doppie frecce >> -->
-        </section>
-      </div>
-
-
     </div>
 
     <br><br>

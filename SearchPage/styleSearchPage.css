@@ -232,6 +232,16 @@ input[type="reset"] {
 }
 
 
+.search-result-link {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Usa il colore del testo del contenitore */
+  }
+
+  .search-result-link:visited {
+      color: inherit; /* Mantiene il colore originale anche dopo che è stato cliccato */
+  }
+
+
 
 /*    CSS del Paginatore in fondo alla pagina*/
 .center-pagination {
@@ -273,3 +283,4 @@ input[type="reset"] {
     }
 
 }
+

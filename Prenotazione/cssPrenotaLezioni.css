@@ -1,0 +1,259 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+html{
+    background-color: white;
+}
+h1 {
+    margin-top: 20px;
+}
+
+.calendar {
+    margin: 20px auto;
+    width: 20%;
+    background-color: white; /* Imposta il colore di sfondo dei giorni della settimana su bianco */
+    border-radius: 5px;
+    margin-top: -45px;
+}
+
+.calendar th {
+    background-color: white;
+    padding: 10px;
+    border: none; /* Rimuovi i bordi dalle celle dell'intestazione */
+}
+
+.calendar th, .calendar td {
+    padding: 20px;
+    border: none; /* Rimuovi i bordi dalle celle del calendario */
+}
+
+
+.calendar td {
+    cursor: pointer;
+}
+
+.calendar td:hover {
+    background-color: white;
+}
+
+.popup {
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 9999;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#time-slots {
+    list-style-type: none;
+    padding: 0;
+}
+
+#time-slots li {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#time-slots li:hover {
+    background-color: white;
+    border: 1px solid rgb(102, 137, 255);
+}
+
+/* AGGIUNTE */
+
+.past-day {
+    color: gray;
+}
+
+.green-day {
+    color: blue;
+    position: relative;
+    font-weight: bold;
+}
+
+.green-day span.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(154, 177, 255, 0.5);
+    border-radius: 50%;
+}
+
+
+
+.circle {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.calendar td.today {
+    color: gray;
+    position: relative;
+}
+
+.calendar td.today::before {
+    content: "\2022";
+    position: absolute;
+    top: 28px;
+    left: 51%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: black;
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    left: 0;
+  }
+  
+.app-header.header-shadow {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03), 0 0.9375rem 1.40625rem rgba(4,9,20,.03), 0 0.25rem 0.53125rem rgba(4,9,20,.05), 0 0.125rem 0.1875rem rgba(4,9,20,.03);
+}
+
+.desktop-logo {
+    display: block; /* Mostra l'immagine desktop */
+    margin-left: 40px;
+}
+
+.mobile-logo {
+    display: none; /* Nascondi l'immagine mobile */
+    margin-left: 40%;
+}
+
+/* Media query per dispositivi con larghezza massima di 768px */
+@media (max-width: 768px) {
+    .desktop-logo {
+        display: none; /* Nascondi l'immagine desktop per dispositivi mobili */
+    }
+
+    .mobile-logo {
+        display: block; /* Mostra l'immagine mobile per dispositivi mobili */
+    }
+}
+
+select{
+    width: 20%;
+    padding: 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color: #6689ff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bottonestop{
+    background-color: #6689ff; /* Colore di sfondo */
+    color: #fff; /* Colore del testo */
+    border: none; /* Rimuovi il bordo */
+    border-radius: 50px; /* Rendi il bordo rotondo */
+    padding: 15px 30px; /* Aggiungi spazio interno */
+    font-size: 18px; /* Dimensione del testo */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra il pulsante */
+    display: block; /* Rendi il pulsante un elemento "block" per centrarlo */
+    margin: 0 auto; /* Centra il pulsante orizzontalmente */
+}
+
+.bottonestop:hover{
+    background-color: #4b75fe; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+    width: 100%; /* Imposta la larghezza desiderata */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    filter: blur(50px); /* Aggiungi sfocatura */
+    z-index: 9998; /* Posto sotto il popup */
+}
+
+.switchbutton {
+    display: block;
+    margin: 1em auto;
+    border-radius: 40px;
+    border: 1px solid #6689ff;
+    background: #6689ff;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.5em 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in; 
+    svg{
+            vertical-align: middle;
+    }
+} 
+.switchbutton:hover {
+cursor:pointer;
+background: #426eff;
+}
+.switchbutton:active {
+transform: scale(.95);
+}
+.switchbutton:focus {
+outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em auto;
+    width: 75%; /* Imposta la larghezza desiderata */
+}
+
+.container {
+    width: calc(100%);
+    height: calc(100%);
+    overflow: auto; /* Aggiunge una barra di scorrimento se il contenuto supera le dimensioni del container */
+}
+
+.calendar {
+    transition: width 0.5s ease, height 0.5s ease; /* Aggiunge una transizione graduale */
+}
+
+@media screen and (max-width: 544px) {
+    .container {
+        transition: width 0.5s ease; /* Aggiungi una transizione graduale per il container */
+    }
+}
