@@ -1,25 +1,51 @@
 body {
     font-family: "Lato", sans-serif;
+    
+}
+
+
+/*     Css del calendario     */
+.calendar-container{
+    border: 5px solid #2d4b65;
+    border-radius: 10px;
     text-align: center;
+    margin: 10px 15px;
 }
 
-html{
-    background-color: white;
+.calendar-container h1{
+    background-color: #2d4b65;
+    padding: 5px 0;;
+    color: white;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.calendar-container h3{
+    color:#333;
+    margin: 0; 
+    font-size: 24px;
 }
 
 
+
+
+
+
+
+
+/*     Css della disposizione dei giorni nel calnedario      */
 .calendar {
-    margin: 20px auto;
-    width: 20%;
+    padding: 0 10px;
+    text-align: center;
     background-color: white; /* Imposta il colore di sfondo dei giorni della settimana su bianco */
     border-radius: 5px;
-    margin-top: -45px;
+    transition: width 0.5s ease, height 0.5s ease; /* Aggiunge una transizione graduale */
 }
 
 .calendar th {
     background-color: white;
-    padding: 10px;
     border: none; /* Rimuovi i bordi dalle celle dell'intestazione */
+    color: #2d4b65;
 }
 
 .calendar th, .calendar td {
@@ -27,15 +53,36 @@ html{
     border: none; /* Rimuovi i bordi dalle celle del calendario */
 }
 
-
 .calendar td {
     cursor: pointer;
+}
+
+.calendar td.today {
+    color: gray;
+    position: relative;
+}
+
+.calendar td.today::before {
+    content: "\2022";
+    position: absolute;
+    top: 28px;
+    left: 51%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: black;
 }
 
 .calendar td:hover {
     background-color: white;
 }
 
+
+
+
+
+
+/*        Css dei popup che appaiono quando clicchi su un giorno e delle singole 
+        caselle della tabella in base al loro stato di prenotazione      */
 .popup {
     display: none;
     border-radius: 10px;
@@ -64,8 +111,9 @@ html{
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
+    font-size: 36px;
     cursor: pointer;
+    color: #333;
 }
 
 #time-slots {
@@ -115,54 +163,7 @@ html{
     cursor: pointer;
 }
 
-.calendar td.today {
-    color: gray;
-    position: relative;
-}
 
-.calendar td.today::before {
-    content: "\2022";
-    position: absolute;
-    top: 28px;
-    left: 51%;
-    transform: translateX(-50%);
-    font-size: 30px;
-    color: black;
-}
-
-.app-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 100;
-    left: 0;
-  }
-  
-.app-header.header-shadow {
-    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03), 0 0.9375rem 1.40625rem rgba(4,9,20,.03), 0 0.25rem 0.53125rem rgba(4,9,20,.05), 0 0.125rem 0.1875rem rgba(4,9,20,.03);
-}
-
-.desktop-logo {
-    display: block; /* Mostra l'immagine desktop */
-    margin-left: 40px;
-}
-
-.mobile-logo {
-    display: none; /* Nascondi l'immagine mobile */
-    margin-left: 40%;
-}
-
-/* Media query per dispositivi con larghezza massima di 768px */
-@media (max-width: 768px) {
-    .desktop-logo {
-        display: none; /* Nascondi l'immagine desktop per dispositivi mobili */
-    }
-
-    .mobile-logo {
-        display: block; /* Mostra l'immagine mobile per dispositivi mobili */
-    }
-}
 
 select{
     width: 20%;
@@ -198,17 +199,7 @@ select{
     width: 100%; /* Imposta la larghezza desiderata */
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    filter: blur(50px); /* Aggiungi sfocatura */
-    z-index: 9998; /* Posto sotto il popup */
-}
+
 
 .switchbutton {
     display: block;
@@ -246,16 +237,12 @@ outline: none;
 }
 
 .container {
-    width: calc(100%);
-    height: calc(100%);
     overflow: auto; /* Aggiunge una barra di scorrimento se il contenuto supera le dimensioni del container */
 }
 
-.calendar {
-    transition: width 0.5s ease, height 0.5s ease; /* Aggiunge una transizione graduale */
-}
 
-@media screen and (max-width: 544px) {
+
+@media screen and (max-width: 600px) {
     .container {
         transition: width 0.5s ease; /* Aggiungi una transizione graduale per il container */
     }

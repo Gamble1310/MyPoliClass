@@ -15,6 +15,7 @@
 .page-content p{
     text-align: center;
     font-size: 26px;
+    font-weight: bold;
     font-family: "Lato", sans-serif;
     color: #333;
     margin-top: 10px;
@@ -31,6 +32,7 @@
 .aula-info{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -41,10 +43,11 @@
 
 /*      Css contenitore informazioni aula     */
 .aula-descr{
-    flex: 60%;
-    padding: 3%;
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 /*      Dati dell'aula       */
@@ -90,5 +93,20 @@
 }
 
 
+/*    Css del calendario in cssPrenotaLazione    */
 
 
+/*     Media query per un pagina responsiva         */
+@media (max-width:1200px) {
+    .aula-info{
+       flex-direction: column;
+    }
+}
+
+@media (max-width:600px){
+    .aula-descr{
+        flex-direction: column;
+    }
+
+    
+}

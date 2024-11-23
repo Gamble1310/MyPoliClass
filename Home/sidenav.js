@@ -5,9 +5,15 @@ const overlay = document.getElementById("overlay");
 
 
 function openNav() {
-    navbar.style.width = "40%";
     overlay.style.display = "block";
     overlay.style.opacity = "0.6";
+
+    if(innerWidth > 600){
+      navbar.style.width = "400px";
+    }else{
+      navbar.style.width = "100%";
+    }
+    
   }
   
   function closeNav() {

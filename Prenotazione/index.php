@@ -12,7 +12,7 @@
     <!-- Link ai file dell'estetica-->
     <link rel="stylesheet" href="../Home/style.css">
     <link rel="stylesheet" href="../Prenotazione/styleInfo.css">
-
+    <link rel="stylesheet" href="../Prenotazione/cssPrenotaLezioni.css">
 </head>
 
 <body>
@@ -54,8 +54,7 @@
 
     <!--Contenitore contenuto pagina-->
     <div class="page-content">
-        <h2>Informazioni sull'Aula</h2>
-        <p>Prenotazione aula <span id="class-name">...</span></p>
+        <h2>Prenotazione aula <span id="class-name">...</span></h2>
 
         <!-- Contenitore delle informazioni dell'aula -->
         <div class="aula-info">
@@ -85,7 +84,7 @@
 
 
             <!--    Calendario da cui prenotare le lezioni     -->
-            <div class="calendar">
+            <div class="calendar-container">
                 <?php
                     require_once '../config.php';
                     $conn->set_charset("utf8");
@@ -94,10 +93,9 @@
                                                 <html class="wide wow-animation" lang="it">
                                                 <head>
 
-                                                <meta charset="UTF-8">
+                                                   <meta charset="UTF-8">
                                                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                                 <title>Calendario delle Prenotazioni</title>
-                                                <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
                                                 <link rel="stylesheet" href="cssPrenotaLezioni.css">
                                                
                                                     
@@ -110,9 +108,9 @@
                                                             <h1 id="TitoloPrincipale" style="visibility:hidden">Calendario per le Prenotazioni</h1>   
                                                             <br>
                                                             <h3 id="current-month"></h3> 
-                                                            <br> 
+                                                             
                                                                 <div class="container">                                 
-                                                                    <table class="calendar" style="user-select: none;">
+                                                                    <table class="calendar" style="user-select: none; border:none; margin:0;">
                                                                         <thead>
                                                                             <tr>
                                                                                 <p id="selected-day-of-week"></p>
@@ -643,23 +641,7 @@
                         $conn->close();
                     ?>
 
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
         </div>
 

@@ -102,8 +102,8 @@ header span {
 
 /*     CSS relativo alla barra di navigazione laterale    */
 .sidenav {
-  height: 100%;
   width: 0;
+  height: 100%;
   position: fixed;
   z-index: 99;
   top: 0;
@@ -113,7 +113,6 @@ header span {
   transition: 0.5s;
   padding-top: 60px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-  max-width: 400px;
 }
 
 .sidenav a {
@@ -193,7 +192,4 @@ header span {
     display: none;
   }
 
-  .sidenav a {
-    font-size: 24px;
-  }
 }
