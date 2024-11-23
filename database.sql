@@ -30,9 +30,9 @@ CREATE TABLE Utenti (
 CREATE TABLE Prenotazioni (
     Email VARCHAR(50) NOT NULL,
     Data_Prenotazione DATE NOT NULL,
-    Ora_Inizio VARCHAR(11) NOT NULL,
+    Orario VARCHAR(11) NOT NULL,
     Nome_Aula VARCHAR(10) NOT NULL,
-    PRIMARY KEY (Email, Nome_Aula),
+    PRIMARY KEY (Email, Nome_Aula, Data_Prenotazione, Orario),
     FOREIGN KEY (Email) REFERENCES Utenti(Email) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Nome_Aula) REFERENCES Aule(Nome_Aula) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

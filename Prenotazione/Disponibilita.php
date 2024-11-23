@@ -11,7 +11,7 @@ if(isset($_POST['NomeClasse'])){
     // Prepara la query con un segnaposto per il parametro
     $query = "SELECT Disponibilita
               FROM Aule
-              WHERE NomeAula = ?";
+              WHERE Nome_Aula = ?";
 
     // Prepara e esegui la query in modo sicuro utilizzando una query parametrica preparata
     $stmt = $conn->prepare($query);

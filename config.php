@@ -1,6 +1,6 @@
 <?php
     // Parametri di configurazione del database
-    $servername = "localhost";
+    $servername = "mysql";
     $username = "root";
     $password = "root";
     $dbname = "MyPoliClassDB";

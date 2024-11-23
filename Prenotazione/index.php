@@ -102,7 +102,6 @@
                 <?php
                     require_once '../config.php';
                     $conn->set_charset("utf8");
-                    header('Content-Type: text/html; charset=utf-8');
                 ?>
                     <!DOCTYPE html>
                     <html class="wide wow-animation" lang="it">
@@ -119,23 +118,6 @@
 
                                                     <!-- <div class="overlay" id="overlay"></div> -->
                                                     <body style="background-color: white; user-select: none;" >
-                                                    <div style="
-                                                    position: fixed;
-                                                    width: 100%;
-                                                    z-index: 100; 
-                                                    ">
-                                                        <div class="app-header header-shadow">
-                                                            <div class="app-header__content" style="margin-top:7px;margin-bottom:7px;">    
-                                                                <div class="app-header__logo" style="float: left;">
-                                                                    <a href="area-personale.php">
-                                                                        <img class="desktop-logo" src="../images/TornaIndietroLogo.png" alt="" width="223" height="50"/>
-                                                                        <img class="mobile-logo" src="../images/TornaIndietro.png" alt="" width="50" height="50"/>
-                                                                    </a>            
-                                                                </div>
-                                                                <img src="../images/logo-default-223x50.png" alt="" width="223" height="50" style="position: absolute; left: 50%; transform: translateX(-50%);">
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                         <br><br><br>                                   
                                                             <h1 id="TitoloPrincipale" style="visibility:hidden">Calendario per le Prenotazioni</h1>   
                                                             <br><br><br>
@@ -183,12 +165,11 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <script src="js/caricamento.js"></script>
+                                                        
                                                         <script>
                                                             var GiaPrenotate = ""; 
                                                             var formattedDate = "";        
                                                             const calendarBody = document.getElementById("calendar-body");
-                                                            const overlay = document.getElementById("overlay");
                                                             const popup = document.getElementById("popup");
                                                             const closePopup = document.getElementById("close-popup");
                                                             const timeSlots = document.querySelectorAll("#time-slots li");
@@ -202,7 +183,19 @@
                                                             let selectedDateCell; 
 
                                                             function updateClass() {
-                                                                var NomeClasse = document.getElementById("class-name").textContent.trim();
+                                                                // Ottieni i parametri dalla query string della URL
+                                                                const urlParams = new URLSearchParams(window.location.search);
+
+                                                                // Ottieni il valore del parametro "class"
+                                                                const NomeClasse = urlParams.get('class');
+
+                                                                // Controlla se il valore è stato trovato e usalo
+                                                                if (NomeClasse) {
+                                                                    console.log("NomeClasse:", NomeClasse.trim());
+                                                                } else {
+                                                                    console.log("Parametro 'class' non trovato nella query string.");
+                                                                }
+
                                                                 var xhr = new XMLHttpRequest();
                                                                 xhr.open("POST", "updateClass.php", true);
                                                                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                
@@ -217,14 +210,12 @@
                                                                             */
                                                                             var responseJSON = JSON.parse(xhr.responseText);
                                                                             GiaPrenotate = responseJSON;
+
                                                                             removeCalendarRows();
                                                                             generateCalendar();
                                                                             
                                                                             document.getElementById("giornisett").style.visibility = "visible";
-                                                                            document.getElementById("teacher-dropdown").style.visibility = "visible";
                                                                             document.getElementById("TitoloPrincipale").style.visibility = "visible";
-                                                                            document.getElementById("LezioniDisponibili").style.visibility = "visible";
-                                                                            document.getElementById("LezioneDiProva").style.visibility = "visible";
 
                                                                             const greenDayCircles = document.querySelectorAll(".green-day span.circle");                           
                                                                             greenDayCircles.forEach((circle) => {
@@ -295,15 +286,12 @@
                                                                                         giornoselezionato.innerHTML = `${dayOfWeek} ${selectedDate} ${currentMonth} ${currentYear}`;
                                                                                         timeSlotsList.innerHTML = stampaDisponibilita;
 
-                                                                                        overlay.style.display = "block";
                                                                                         popup.style.display = "block";
                                                                                     }
                                                                                 });
                                                                             });
 
-                                                                            hideOverlay();
                                                                         } else {
-                                                                            hideOverlay(); 
                                                                             console.error("Errore durante la richiesta al server:", xhr.status, xhr.statusText);
                                                                             alert("Si è verificato un errore durante la richiesta al server.");
                                                                             
@@ -314,10 +302,21 @@
                                                             }
 
                                                             function updateDisponibilita() {
-                                                                showOverlay();
-                                                                var NomeClasse = document.getElementById("class-name").textContent.trim();
+                                                                // Ottieni i parametri dalla query string della URL
+                                                                const urlParams = new URLSearchParams(window.location.search);
+
+                                                                // Ottieni il valore del parametro "class"
+                                                                const NomeClasse = urlParams.get('class');
+
+                                                                // Controlla se il valore è stato trovato e usalo
+                                                                if (NomeClasse) {
+                                                                    console.log("NomeClasse:", NomeClasse.trim());
+                                                                } else {
+                                                                    console.log("Parametro 'class' non trovato nella query string.");
+                                                                }
+
                                                                 var xhr = new XMLHttpRequest();
-                                                                xhr.open("POST", "updateDisponbilita.php", true);
+                                                                xhr.open("POST", "Disponibilita.php", true);
                                                                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                                                                 xhr.onreadystatechange = function () {
                                                                     if (xhr.readyState === 4) {
@@ -495,7 +494,6 @@
                                                             }
 
                                                             closePopup.addEventListener("click", function () {
-                                                                overlay.style.display = "none";
                                                                 popup.style.display = "none";  
                                                             });
                                                             updateDisponibilita();
@@ -561,7 +559,6 @@
                                                                         }
                                                                         var timeSlotsList = document.getElementById("time-slots");
                                                                         timeSlotsList.innerHTML = stampaDisponibilita;
-                                                                        overlay.style.display = "block";
                                                                         popup.style.display = "block";
                                                                         
                                                                     }
@@ -594,21 +591,32 @@
                                                             });
 
                                                             confirmBookingBtn.addEventListener("click", function () {
-                                                                showOverlay();  
                                                                 var currentDate = new Date();
-                                                                var NomeClasse = document.getElementById("class-name").textContent.trim();
+                                                                // Ottieni i parametri dalla query string della URL
+                                                                const urlParams = new URLSearchParams(window.location.search);
+
+                                                                // Ottieni il valore del parametro "class"
+                                                                const NomeClasse = urlParams.get('class');
+
+                                                                // Controlla se il valore è stato trovato e usalo
+                                                                if (NomeClasse) {
+                                                                    console.log("NomeClasse:", NomeClasse.trim());
+                                                                } else {
+                                                                    console.log("Parametro 'class' non trovato nella query string.");
+                                                                }
+
                                                                 var usernameLogin = "v.volpe@studenti.poliba.it";
                                                                 var dayOfWeek = selectedDateCell.dataset.dayOfWeek
                                                                 var data = {
                                                                     data: formattedDate,
                                                                     orario: selectedTime,
-                                                                    NomeTutor: NomeTutor,
+                                                                    NomeClasse: NomeClasse,
                                                                     usernameLogin: usernameLogin,
                                                                     dayOfWeek: dayOfWeek
                                                                 };
        
                                                                 var xhr2 = new XMLHttpRequest();
-                                                                xhr2.open("POST", "InvioAula.php", true);
+                                                                xhr2.open("POST", "invioAula.php", true);
                                                                 xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                                                                 xhr2.onload = function () {
                                                                     if (xhr2.status === 200) {
@@ -627,12 +635,10 @@
                                                                     alert("Si è verificato un errore di rete.");
                                                                 };
                                                                 xhr2.send(JSON.stringify(data));
-                                                                overlay.style.display = "none";
                                                                 bookingPopup.style.display = "none";
                                                             });
 
                                                             cancelBookingBtn.addEventListener("click", function () {
-                                                                overlay.style.display = "none";
                                                                 bookingPopup.style.display = "none";
                                                             });
 
@@ -644,8 +650,6 @@
                                                     </html>
                             <?php
                         // Rilascia il risultato
-                        $result->free();
-                        $stmt->close();
                         $conn->close();
                     ?>
 
