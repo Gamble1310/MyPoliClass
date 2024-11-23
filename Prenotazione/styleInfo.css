@@ -92,11 +92,3 @@
 
 
 
-
-
-/*       Calendario da cui si possono prenotare le fasce orarie determinate      */
-.calendar{
-    flex: 35%;
-    border: 3px solid #ddd;
-    background-color: tomato;
-}

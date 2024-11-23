@@ -11,7 +11,7 @@ if(isset($_POST['NomeClasse'])){
     WHERE 
         (Nome_Aula = ? OR Email = ?) -- Filtra per Nome_Aula o Email
         AND Data_Prenotazione >= CURDATE() -- Prenotazioni future
-        AND Data_Prenotazione <= DATE_ADD(CURDATE(), INTERVAL 20 DAY); -- Fino a 20 giorni avanti
+        AND Data_Prenotazione <= DATE_ADD(CURDATE(), INTERVAL 50 DAY); -- Fino a 20 giorni avanti
     ";
 
     $stmt = $conn->prepare($query);

@@ -74,9 +74,9 @@
                 <!-- Immagine dell'aula desiderata -->
                 <img src="../Prenotazione/aula-esempio.jpg" alt="Foto aula" class="aula-img">
 
-                <!-- Mappa in cui dovrebbe essere evidenziata l'aula deasiderata (WIP) -->
-                <img src="../Dashboard/mapview.png" alt="Psizione aula" class="aula-map">
-                <!-- Descrizione della posizione (WIP) -->
+                <!-- Mappa in cui dovrebbe essere evidenziata l'aula deasiderata  -->
+                <a href="../Map/index.html" class="aula-map"><img src="../Dashboard/mapview.png" alt="Psizione aula"  style="border-radius: 20px; width:100%; height:auto;"></a>
+                <!-- Descrizione della posizione -->
                 <span class="position-descr"><span class="aula-name">POSIZIONE AULA</span><br>
                     Clicca sull'immagine per aprire la mappa dell'edificio in cui si trova l'aula</span>
 
@@ -84,44 +84,33 @@
             </div>
 
 
-
-
-
-
-
-
-
-
-
-
-            <!-- Calendario da cui prenotare la lezione (WIP)
-             (le funzioni sono ancora da determinare con precisione; idee: 
-              1. far in modo che se si arriva dalla pagina di ricerca, venga presa la data inserita e riportata automaticamente sul calendario;
-              2. far in modo che in base alle dispoinibilita' dell'aula in un giorno, il giorno sul calendario sia colorato diversamente)-->
+            <!--    Calendario da cui prenotare le lezioni     -->
             <div class="calendar">
                 <?php
                     require_once '../config.php';
                     $conn->set_charset("utf8");
                 ?>
-                    <!DOCTYPE html>
-                    <html class="wide wow-animation" lang="it">
-                    <head>
+                                               <!DOCTYPE html>
+                                                <html class="wide wow-animation" lang="it">
+                                                <head>
 
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Calendario delle Prenotazioni</title>
-                        <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-                        <link rel="stylesheet" href="cssPrenotaLezioni.css">
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>Calendario delle Prenotazioni</title>
+                                                <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+                                                <link rel="stylesheet" href="cssPrenotaLezioni.css">
+                                               
                                                     
 
-                    </head>
+                                                </head>
 
                                                     <!-- <div class="overlay" id="overlay"></div> -->
                                                     <body style="background-color: white; user-select: none;" >
-                                                        <br><br><br>                                   
+                                                                                          
                                                             <h1 id="TitoloPrincipale" style="visibility:hidden">Calendario per le Prenotazioni</h1>   
-                                                            <br><br><br>
-                                                            <h3 id="current-month"></h3>   
+                                                            <br>
+                                                            <h3 id="current-month"></h3> 
+                                                            <br> 
                                                                 <div class="container">                                 
                                                                     <table class="calendar" style="user-select: none;">
                                                                         <thead>
@@ -157,6 +146,7 @@
                                                         <div id="booking-popup" class="popup" style="width: 90vw; max-width: 500px;">
                                                             <div class="popup-content">
                                                                 <span class="close-popup" id="close-booking-popup">&times;</span>
+                                                                <br>
                                                                 <h2>Conferma la prenotazione:</h2>
                                                                 <p id="booking-details" style="font-size:19px"></p>
                                                                 <div class="button-container">
@@ -345,7 +335,7 @@
                                                                 const startDate = new Date(today);
                                                                 startDate.setDate((today.getDate() + (1 - today.getDay())) - 7); // Imposta la data iniziale alla prossima Domenica
                                                                 const endDate = new Date(startDate);
-                                                                endDate.setDate(startDate.getDate() + 28); // Imposta la data finale a 19 giorni dopo
+                                                                endDate.setDate(startDate.getDate() + 38); // Imposta la data finale a 19 giorni dopo
                                                                 const daysOfWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
                                                                 const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
                                                                 currentMonthElement.textContent = `${months[startDate.getMonth()]} ${startDate.getFullYear()} / ${months[endDate.getMonth()]}  ${endDate.getFullYear()}`;
@@ -361,7 +351,7 @@
                                                                         cell.classList.add("date"); 
                                                                         cell.dataset.dayOfWeek = daysOfWeek[currentDayOfWeek]; 
                                                                         const controllo = new Date();
-                                                                        controllo.setDate(today.getDate() + 20);
+                                                                        controllo.setDate(today.getDate() + 30);
                                                                         if (startDate < today || startDate > controllo) {
                                                                             cell.classList.add("past-day"); 
                                                                         } else if (startDate.getTime() === today.getTime()) {

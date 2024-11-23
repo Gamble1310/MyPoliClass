@@ -1,14 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: center;
 }
 
 html{
     background-color: white;
 }
-h1 {
-    margin-top: 20px;
-}
+
 
 .calendar {
     margin: 20px auto;
@@ -48,9 +46,14 @@ h1 {
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.5);
     width: 300px;
     z-index: 9999;
+}
+
+#popup{
+    height: 70%;
+    overflow-y: auto;
 }
 
 .popup-content {
