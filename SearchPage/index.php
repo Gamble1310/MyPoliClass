@@ -53,7 +53,7 @@
     <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
     <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
     <a href="../Dashboard/index.html"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
-    <a href="../SearchPage/index.html"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+    <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
     <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
     <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie
       Prenotazioni</a>
@@ -190,7 +190,7 @@
           // Mostra i risultati
           if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                echo '<a href="../Prenotazione/index.html" class="search-result-link">';
+                echo '<a href="../Prenotazione/index.php" class="search-result-link">';
                   echo '<div class="search-result" >';
                   echo '<img src="' . $row['Immagine'] . '" alt="Immagine aula">';
                   echo '<section>';
