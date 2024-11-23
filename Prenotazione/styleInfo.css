@@ -31,7 +31,6 @@
 /*    Css relativo alla descrizione dell'aula + Calendario    */
 .aula-info{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -45,16 +44,16 @@
 .aula-descr{
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
+    margin: 20px 0;
+    justify-content: space-around;
+
 }
 
 /*      Dati dell'aula       */
 .data{
+    width: 40%;
     font-size: 24px;
     font-family: "Lato", sans-serif;
-    width: 50%;
 }
 
 /*     Nome dell'aula nei dati    */
@@ -68,27 +67,29 @@
 
 /*     Immagine dell'aula nella descrizione      */
 .aula-img{
-    width: 40%;
+    width: 50%;
     height: auto;
     object-fit: cover;
-    border-radius: 20px;
-    margin: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 5px solid #2d4b65;
 }
 
 /*        Mappa dell'edificio dell'aula fatta in modo che sia evidenziata l'aula a cui si riferisce la pagina (WIP)        */
 .aula-map{
     width: 50%;
-    height: auto;
+    height: 40%;
     object-fit: cover;
-    border-radius: 20px;
-    margin: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 5px solid #2d4b65;
 }
 
 /*       Descrizione della posizione dell'aula     */
 .position-descr{
+    width: 40%; 
     font-size: 16px;
-    font-family: "Lato", sans-serif;
-    width: 40%;
+    font-family: "Lato", sans-serif;   
     margin-top: 5%;
 }
 
@@ -101,12 +102,4 @@
     .aula-info{
        flex-direction: column;
     }
-}
-
-@media (max-width:600px){
-    .aula-descr{
-        flex-direction: column;
-    }
-
-    
 }

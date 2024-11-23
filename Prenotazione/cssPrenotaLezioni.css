@@ -242,8 +242,14 @@ outline: none;
 
 
 
-@media screen and (max-width: 600px) {
-    .container {
-        transition: width 0.5s ease; /* Aggiungi una transizione graduale per il container */
-    }
+@media (max-width: 1200px) {
+   .calendar-container{
+    margin: 15px auto;
+   }
+}
+
+@media (max-width: 600px){
+    .calendar-container{
+        margin: 15px;
+       }
 }

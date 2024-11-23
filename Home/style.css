@@ -193,3 +193,9 @@ header span {
   }
 
 }
+
+@media (max-width:400px) {
+  .sidenav a{
+    font-size: 24px;
+  }
+}

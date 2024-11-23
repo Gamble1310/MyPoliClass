@@ -62,7 +62,11 @@
             <!-- Conteniteore della descrizione dell'aula -->
             <div class="aula-descr">
 
-                <!-- Dati dell'aula -->
+                
+                <!-- Immagine dell'aula desiderata -->
+                <img src="../Prenotazione/aula-esempio.jpg" alt="Foto aula" class="aula-img">
+               
+                 <!-- Dati dell'aula -->
                 <span class="data"><span class="aula-name">AULA: <span id="class-name">...</span></span><br>
                     Codice aula:...<br>
                     Grandezza:...<br>
@@ -70,11 +74,10 @@
                     Piano:...<br>
                     Lim:...<br>
                     Prese:...<br></span>
-                <!-- Immagine dell'aula desiderata -->
-                <img src="../Prenotazione/aula-esempio.jpg" alt="Foto aula" class="aula-img">
 
                 <!-- Mappa in cui dovrebbe essere evidenziata l'aula deasiderata  -->
-                <a href="../Map/index.html" class="aula-map"><img src="../Dashboard/mapview.png" alt="Psizione aula"  style="border-radius: 20px; width:100%; height:auto;"></a>
+                <a href="../Map/index.html" class="aula-map"><img src="../Dashboard/mapview.png" alt="Psizione aula"  style="border-radius: 20px; width:100%; height:100%;"></a>
+                
                 <!-- Descrizione della posizione -->
                 <span class="position-descr"><span class="aula-name">POSIZIONE AULA</span><br>
                     Clicca sull'immagine per aprire la mappa dell'edificio in cui si trova l'aula</span>
