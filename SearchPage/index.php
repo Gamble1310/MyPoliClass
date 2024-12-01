@@ -1,241 +1,217 @@
 <!DOCTYPE html>
 <html lang="it">
 
-<head>
+<!-- Verifica se la sessione è attiva tramite il file checksession -->
+<?php
+include '../checksession.php';
+?>
 
+<head>
   <title>MyPoliClass</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Link all'icona della pagina accanto al titolo, type="image/x-icon" indica il tipo di dati e rel="icon" indicano 
-    cosa sia e l'utilizzo (icon come icona o apple-toch-icon per le icone degli shortcut su dispositivi apple -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../Home/icon.ico">
 
-  <!-- Link ai file dell'estetica-->
+  <!-- CSS principali -->
   <link rel="stylesheet" href="../Home/style.css">
   <link rel="stylesheet" href="../SearchPage/styleSearchPage.css">
 
-
+  <!-- Inclusione dello script JavaScript -->
   <script>
-    function searchResults() {
-      const query = document.getElementById("search").value.toLowerCase().replace(/\s+/g, ""); // Rimuove tutti gli spazi dalla query
+    function toggleDropdown() {
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const dropArrow = document.getElementById("dropArrow");
+
+      if (dropdownMenu.style.display === "block") {
+        dropdownMenu.style.display = "none"; // Nascondi il menu
+        dropArrow.style.transform = "rotate(0deg)"; // Ripristina la freccia
+      } else {
+        dropdownMenu.style.display = "block"; // Mostra il menu
+        dropArrow.style.transform = "rotate(180deg)"; // Ruota la freccia
+      }
+    }
+
+    function filterResults() {
+      const query = document.getElementById("search").value.toLowerCase().replace(/\s+/g, "");
       const results = document.querySelectorAll(".search-result");
-  
+      let hasResults = false;
+
       results.forEach((result) => {
-        const aulaName = result.querySelector(".aula-name").innerText.toLowerCase().replace(/\s+/g, ""); // Rimuove tutti gli spazi dal nome aula
+        const aulaName = result.querySelector(".aula-name").innerText.toLowerCase().replace(/\s+/g, "");
         if (aulaName.includes(query)) {
-          result.style.display = ""; // Mostra se corrisponde
+          result.style.display = "";
+          hasResults = true;
         } else {
-          result.style.display = "none"; // Nascondi se non corrisponde
+          result.style.display = "none";
         }
       });
+
+      const noResultsMessage = document.getElementById("noResultsMessage");
+
+      if (!hasResults) {
+        if (!noResultsMessage) {
+          const message = document.createElement("p");
+          message.id = "noResultsMessage";
+          message.textContent = "Nessuna aula corrisponde alla tua ricerca.";
+          message.style.color = "red";
+          message.style.textAlign = "center";
+          document.querySelector(".search-list").appendChild(message);
+        }
+      } else {
+        if (noResultsMessage) {
+          noResultsMessage.remove();
+        }
+      }
     }
-    
   </script>
 </head>
 
 <body>
-
-  <!--Per l'header ho usato una flexbox-->
-  <header>
+<header>
     <img src="../Home/menu-icon.svg" alt="menu" class="navbarIcon" onclick="openNav()">
     <span>
-      <h1>MYPOLICLASS </h1>
-      <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
+        <h1>MYPOLICLASS </h1>
+        <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
     </span>
     <i width="64px"></i>
     <!-- Questo elemento vuoto mi serve per far in modo che il nome del sito sia centrato, poiche' per l'header uso una flexbox con justify-content: spacebetween;-->
-  </header>
+</header>
 
-  <!--Barra di navigazione laterale a scomparsa (nome in inglese: offcanvas)-->
+
+
+  <!-- Barra laterale -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
     <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
-    <a href="../Dashboard/index.html"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
+    <a href="../Dashboard/index.php"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
     <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
-    <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-    <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie
-      Prenotazioni</a>
+    <a href="../Map/index.php"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+    <a href="../Prenotazioni-effetuate/index.php"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie Prenotazioni</a>
     <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
-    <!-- &nbsp; simbolo del carattere di spaziatura-->
-    <!-- Icona per il logout -->
-    <a href="../Login/index.html" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px"
-        height="64px"></a>
+    <a href="../Logout.php" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px" height="64px"></a>
   </div>
 
-  <!--Oscuramento della pagina quando e' attiva la sidenav, cliccando sulla pagina l'overlay scampare con la sidebar-->
+  <!-- Overlay per la sidenav -->
   <div id="overlay" onclick="closeNav()"></div>
 
-  <!--Bottone per tornare in cima alla pagina-->
-  <button onclick="topFunction()" id="topbutton" title="Torna su"><img src="../Home/arrow-upward.svg" alt="arrow-upward"
-      height="40px" width="40px"></button>
+  <!-- Bottone torna su -->
+  <button onclick="topFunction()" id="topbutton" title="Torna su">
+    <img src="../Home/arrow-upward.svg" alt="arrow-upward" height="40px" width="40px">
+  </button>
 
-
-  <!--Menu dei filtri-->
+  <!-- Sezione Filtri -->
   <div class="filters">
-
-    <!--Titolo filtri-->
     <div id="filterTitle">
       <p>Filtri</p>
-      <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px"></p>
+      <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px">
     </div>
 
-    <form><!--   Aggiungere la destinzazione dei dati inseriti nel form    -->
-
-      <!--   Selettore grandezza    -->
+    <form action="<?=($_SERVER['PHP_SELF'])?>" method="POST">
       <fieldset class="filterbuttons">
         <legend>Grandezza</legend>
-        <span><input type="radio" id="piccola" name="grandezza" value="piccola">
-          <label for="piccola">Piccola</label></span>
-        <span><input type="radio" id="grande" name="grandezza" value="grande">
-          <label for="grande">Grande</label></span>
+        <span><input type="radio" id="piccola" name="grandezza" value="piccola"><label for="piccola">Piccola</label></span>
+        <span><input type="radio" id="grande" name="grandezza" value="grande"><label for="grande">Grande</label></span>
       </fieldset>
 
+      <button type="button" onclick="toggleDropdown()" class="dropdownBtn">Filtri Aggiuntivi 
+        <img src="../SearchPage/dropdown-arrow.svg" alt="dropdown" style="height: 36px;width: 36px;" id="dropArrow">
+      </button>
 
-      <!--  Selettore dei filtri aggiuntivi   -->
-
-      <!-- Essendo dentro un form e' molto importante definire che il tipo sia button,
-           poichè di default tutti i bottoni nei form eseguonao una submit, ma questo non e'
-           voluto in questo caso ed e' molto importante che il bottone esegua la sua funzione senza submit, altrimenti non funziona-->
-      <button type="button" onclick="toggleDropdown()" class="dropdownBtn"> Filtri Aggiuntivi 
-        <img src="../SearchPage/dropdown-arrow.svg" alt="dropdown" style="height: 36px;width: 36px;" id="dropArrow"></button>
-
-      <!-- Contenitore dei filtri aggiuntivi, che appare a schermo quando si clicca sul bottone col nome filti aggiuntivi -->
       <fieldset id="dropdownMenu">
-        <span><input type="checkbox" id="prese" name="extraPrese" value="prese">
-          <label for="prese">Presnza di prese elettriche</label></span><br>
-        <span><input type="checkbox" id="lim" name="extraLim" value="lim">
-          <label for="lim">Lim</label></span><br>
-        <span><input type="checkbox" id="connessione" name="extraConnessione" value="connessione">
-          <label for="connessione">Connessione</label></span><br>
-        <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC">
-          <label for="aria-condizonata">Aria condizionata</label></span><br>
+        <span><input type="checkbox" id="prese" name="extraPrese" value="prese"><label for="prese">Presenza di prese elettriche</label></span><br>
+        <span><input type="checkbox" id="lim" name="extraLim" value="lim"><label for="lim">Lim</label></span><br>
+        <span><input type="checkbox" id="connessione" name="extraConnessione" value="connessione"><label for="connessione">Connessione</label></span><br>
+        <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC"><label for="aria-condizonata">Aria condizionata</label></span><br>
+        <label>Data</label>
+        <input type="date" id="data" name="data" title="Seleziona una data" min="<?= date('Y-m-d', strtotime('+1 day')); ?>">
+
       </fieldset>
 
-
-      <!--Pulsanti per inviare o resettare i valori nel form-->
       <div class="filterbuttons">
-        <input type="submit" value="Invia" title="Filtra i risultati">
+        <input type="submit" value="Applica" title="Applica i filtra ai risultati">
         <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
       </div>
     </form>
   </div>
 
-  <!--Contenuto pagina-->
+  <!-- Contenuto principale -->
   <div class="content">
     <h2>Pagina di Ricerca</h2>
 
-
-    <!--Barra di ricerca-->
-    <form id="searchbar" class="searchbar">
-      <button type="submit" title="Cerca"><img src="search.svg" alt="searc-icon" height="28px" width="28px"></button>
-      <input type="text" name="search" placeholder="Ricerca.." spellcheck="false">
+    <!-- Barra di ricerca -->
+    <form id="searchbar" class="searchbar" onsubmit="return false;">
+      <button type="submit">
+        <img src="search.svg" alt="search-icon" height="28px" width="28px">
+      </button>
+      <input type="text" id="search" placeholder="Ricerca.." spellcheck="false" oninput="filterResults()">
     </form>
 
-
-
-      <!-- Lista dinamica -->
+    <!-- Lista dinamica dei risultati -->
     <div class="search-list">
       <?php
-          require_once('../config.php');
-          
-          // Raccolta dati dai filtri
-          $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
-          $prese = isset($_POST['extraPrese']) ? true : false;
-          $lim = isset($_POST['extraLim']) ? true : false;
-          $connessione = isset($_POST['extraConnessione']) ? true : false;
-          $aria = isset($_POST['extraAC']) ? true : false;
-          $reset=isset($_POST['reset']) ? true : false;
-          // Costruzione della query
-          $query = "SELECT Nome_Aula, Numero_Posti, Piano, Prese, Aria, Descrizione, Immagine, Connessione, Lim FROM aule WHERE 1=1";
-          
-          if($reset==false)
-          {
-          
-          
-          // Filtro per grandezza
-          if ($grandezza) {
-              if ($grandezza == "piccola") {
-                  $query .= " AND Tipologia='Piccola'"; 
-              } elseif ($grandezza == "grande") {
-                  $query .= " AND Tipologia='Grande'";
-              }
+        require_once('../config.php');
+
+        $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
+        $prese = isset($_POST['extraPrese']) ? true : false;
+        $lim = isset($_POST['extraLim']) ? true : false;
+        $connessione = isset($_POST['extraConnessione']) ? true : false;
+        $aria = isset($_POST['extraAC']) ? true : false;
+        $data = isset($_POST['data']) ? $_POST['data'] : null;
+
+        $query = "SELECT a.Nome_Aula, a.Numero_Posti, a.Tipologia, a.Piano, a.Prese, a.Aria, a.Descrizione, a.Immagine, a.Connessione, a.Lim
+                  FROM aule a
+                  WHERE 1=1";
+
+        if ($grandezza) {
+          $query .= $grandezza == "piccola" ? " AND a.Tipologia = 'Piccola'" : " AND a.Tipologia = 'Grande'";
+        }
+        if ($prese) $query .= " AND a.Prese = 1";
+        if ($lim) $query .= " AND a.Lim = 1";
+        if ($connessione) $query .= " AND a.Connessione = 1";
+        if ($aria) $query .= " AND a.Aria = 1";
+
+        if ($data) {
+          $query .= " AND a.Nome_Aula NOT IN (
+                        SELECT Nome_Aula 
+                        FROM prenotazioni 
+                        WHERE Data_Prenotazione = '$data'
+                        GROUP BY Nome_Aula
+                        HAVING COUNT(*) = 14
+                      )";
+        }
+
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            $url = "../Prenotazione/index.php?class=" . urlencode($row['Nome_Aula']); // URL della pagina con il parametro classe
+            echo '<div class="search-result" onclick="window.location.href=\'' . $url . '\'">';
+            echo '<img src="' . $row['Immagine'] . '" alt="Immagine aula">';
+            echo '<section>';
+            echo '<span class="aula-name"><b>AULA-' . $row['Nome_Aula'] . '</b></span><br>';
+            echo '<span class="dimensione">Numero posti: ' . $row['Numero_Posti'] . '</span><br>';
+            echo '<span class="edificio">Piano: ' . $row['Piano'] . '</span><br>';
+            echo '<span class="prese">Prese elettriche: ' . ($row['Prese'] ? 'Sì' : 'No') . '</span><br>';
+            echo '<span class="aria">Aria condizionata: ' . ($row['Aria'] ? 'Sì' : 'No') . '</span><br>';
+            echo '<span class="lim">Presenza Lim: ' . ($row['Lim'] ? 'Sì' : 'No') . '</span><br>';
+            echo '<span class="connessione">Connessione internet: ' . ($row['Connessione'] ? 'Sì' : 'No') . '</span><br>';
+            echo '</section>';
+            echo '</div>';
           }
-          
-          // Filtro per prese
-          if ($prese) {
-              $query .= " AND Prese = 1";
-          }
-          
-          // Filtro per Lim
-          if ($lim) {
-              $query .= " AND Lim = 1";
-          }
-          
-          // Filtro per Connessione internet
-          if ($connessione) {
-              $query .= " AND Connessione = 1";
-          }
-          
-          // Filtro per aria condizionata
-          if ($aria) {
-              $query .= " AND Aria = 1";
-          }
-          }
-          
-          // Esecuzione della query
-          $result = $mysqli->query($query);
-          
-          // Mostra i risultati
-          if ($result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                echo '<a href="../Prenotazione/index.php" class="search-result-link">';
-                  echo '<div class="search-result" >';
-                  echo '<img src="' . $row['Immagine'] . '" alt="Immagine aula">';
-                  echo '<section>';
-                  echo '<span class="aula-name"><b>' . 'AULA-' . $row['Nome_Aula'] . '</b><br><br></span>';
-                  echo '<span class="dimensione">Numero posti: ' . $row['Numero_Posti'] . '</span><br>';
-                  echo '<span class="edificio">Piano: ' . $row['Piano'] . '</span><br>';
-                  echo '<span class="prese">Prese elettriche: ' . ($row['Prese'] ? 'Sì' : 'No') . '</span><br>';
-                  echo '<span class="aria">Aria condizionata: ' . ($row['Aria'] ? 'Sì' : 'No') . '</span><br>';
-                  echo '<span class="lim">Presenza Lim: ' . ($row['Lim'] ? 'Sì' : 'No') . '</span><br>';
-                  echo '<span class="connessione">Connessione internet: ' . ($row['Connessione'] ? 'Sì' : 'No') . '</span><br>';
-                  echo '</section>';
-                  echo '</div>';
-                echo '</a>';
-              }
-          } else {
-              echo '<p> Nessun risultato soddisfa i requisiti della ricerca </p>';
-          }
-          
-          
-          
-          $mysqli->close();
+        } else {
+          echo '<p>Nessun risultato trovato.</p>';
+        }
+
+        $conn->close();
       ?>
-      
-      </div>
     </div>
+  </div>
 
-    <br><br>
+  <script type="text/javascript" src="../Home/topbutton.js"></script>
+  <script type="text/javascript" src="../Home/sidenav.js"></script>
 
-    <!--  Paginatore   -->
-    <div class="center-pagination">
-      <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">&raquo;</a>
-      </div>
-    </div>
-
-    <br><br>
-
-
-    <script type="text/javascript" src="../Home/topbutton.js"></script>
-    <script type="text/javascript" src="../Home/sidenav.js"></script>
-    <script type="text/javascript" src="../SearchPage/dropdown.js"></script>
 </body>
 
 </html>

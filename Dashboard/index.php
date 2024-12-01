@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 
+<!-- Verifica se la sessione è attiva tramite il file checksession-->
+<?php
+include '../checksession.php';
+?>
+
+
 <head>
 
     <title>MyPoliClass</title>
@@ -34,15 +40,16 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
-        <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
-        <a href="../Dashboard/index.html"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
+
+        <img src="../Home/user.svg" alt="Immagine profilo" class="profileimg">   <!-- MODIFICA SULLA IMMAGINE, PUò ESSERE SOLO PNG -->
+        <a href="../Dashboard/index.php"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
         <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
-        <a href="../Map/index.html"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-        <a href="../Prenotazioni-effetuate/index.html"><img src="../Home/reservation.svg" width="36px" height="36px">Le mie Prenotazioni</a>
+        <a href="../Map/index.php"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+        <a href="../Prenotazioni-effetuate/index.php"><img src="../Home/reservation.svg" width="36px" height="36px">Le mie Prenotazioni</a>
         <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
         <!-- &nbsp; simbolo del carattere di spaziatura-->
         <!-- Icona per il logout -->
-        <a href="../Login/index.html" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px"
+        <a href="../Logout.php" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px"
                 height="64px"></a>
     </div>
 
@@ -57,13 +64,16 @@
     <!-- Contenuto della dashboard  -->
     <div class="dashboard-content">
 
-        <h2> Benvenuto nella tua area riservata</h2>
+        <h2> Benvenuto nella tua area riservata <?php
+            // Mostra l'username dalla sessione
+            echo htmlspecialchars($_SESSION['username']);            ?>
+        </h2>
         <p>Utilizza lo sturmento di ricerca o la mappa per effettuare la tua prenotazione</p>
 
 
         <div class="dashboard-flexbox">
             
-            <a href="../Map/index.html" class="dashboard-flexitem">
+            <a href="../Map/index.php" class="dashboard-flexitem">
                  <p>Visualizza la Mappa</p>
                  <img src="../Dashboard/mapview.png" alt="Mappa">
                  <br><br>

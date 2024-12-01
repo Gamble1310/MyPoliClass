@@ -60,6 +60,14 @@ body{
     background-color: #ddd;
 }
 
+/* CSS per link di logout della pagina di registrazione */
+a.logoutregistrazione {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Mantiene il colore del testo corrente */
+    font-size: 16px; /* Dimensione del testo */
+    font-weight: bold; /* Grassetto per evidenziare il link (opzionale) */
+}
+
 
 
 /* Media query per far in modo che la pagina sia repsonsiva alla dimansione della finestra*/
