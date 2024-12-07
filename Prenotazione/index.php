@@ -69,15 +69,11 @@ include '../checksession.php';
             <div class="aula-descr">
 
 
-                <!-- Immagine dell'aula desiderata -->
-                <img src="../Prenotazione/aula-esempio.jpg" alt="Foto aula" class="aula-img">
-
-
                 <!-- Dati dell'aula -->
                 <?php
                 require_once('../config.php');
                 $NomeClasse = $_GET['class'];  // Prendi il valore del parametro 'class'
-                $query = "SELECT Nome_Aula, Tipologia, Numero_Posti, Piano, Lim, Prese, Connessione, Aria FROM aule WHERE Nome_Aula = '$NomeClasse'";  // Usa il placeholder per la preparazione della query
+                $query = "SELECT Nome_Aula, Tipologia, Numero_Posti, Immagine, Piano, Lim, Prese, Connessione, Aria FROM aule WHERE Nome_Aula = '$NomeClasse'";  // Usa il placeholder per la preparazione della query
 // Esegui la query per ottenere i dati delle aule
                 
 
@@ -86,6 +82,7 @@ include '../checksession.php';
                 // Verifica se ci sono risultati
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        echo '<img src="' . $row['Immagine'] . '" alt="Foto aula" class="aula-img">';
                         echo '<div class="data">';
                         echo '<span class="aula-name">AULA: <span id="class-name">' . htmlspecialchars($row['Nome_Aula']) . '</span></span><br>';
                         echo 'Tipologia: ' . htmlspecialchars($row['Tipologia']) . '<br>';

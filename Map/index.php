@@ -74,7 +74,7 @@ include '../checksession.php';
 
             <!-- Tooltip aula A -->
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulaa.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;">Aula A</b><br>
                 Dimensione: Grande<br>
                 Prese elettriche: Si<br>
@@ -89,7 +89,7 @@ include '../checksession.php';
 
             <!-- Tooltip aula B -->   <!-- AULA B DA AGGIUNGERE AL DB-->
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulab.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;">Aula B</b><br>
                 Dimensione: Piccola<br>
                 Prese elettriche: No<br>
@@ -104,7 +104,7 @@ include '../checksession.php';
 
             <!-- Tooltip aula C -->   
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulac.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;">Aula C</b><br>
                 Dimensione: Grande<br>
                 Prese elettriche: Si<br>
@@ -118,7 +118,7 @@ include '../checksession.php';
             
            <!-- Tooltip aula D -->   
            <span class="tooltip">
-            <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+            <img src="../immagini_aule/aulad.jpeg" alt="img-aula-emsepio">
             <b style="text-align: center; color: #2d4b65;">Aula D</b><br>
             Dimensione: Grande<br>
             Prese elettriche: Si<br>
@@ -135,7 +135,7 @@ include '../checksession.php';
 
             <!-- Tooltip aula E -->   
            <span class="tooltip">
-            <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+            <img src="../immagini_aule/aulae.jpeg" alt="img-aula-emsepio">
             <b style="text-align: center; color: #2d4b65;">Aula E</b><br>
             Dimensione: Piccola<br>
             Prese elettriche: No<br>
@@ -149,7 +149,7 @@ include '../checksession.php';
          
        <!-- Tooltip Aula Magna Orabona -->   
          <span class="tooltip">
-            <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+            <img src="../immagini_aule/magna.jpeg" alt="img-aula-emsepio">
             <b style="text-align: center; color: #2d4b65;">Aula Magna Orabona</b><br>
             Dimensione: Grande<br>
             Prese elettriche: Si<br>
@@ -163,7 +163,7 @@ include '../checksession.php';
 
         <!-- Tooltip Aula G -->   
          <span class="tooltip">
-            <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+            <img src="../immagini_aule/aulag.jpeg" alt="img-aula-emsepio">
             <b style="text-align: center; color: #2d4b65;">Aula G</b><br>
             Dimensione: Grande<br>
             Prese elettriche: Si<br>
@@ -175,7 +175,7 @@ include '../checksession.php';
         <a id="H" href="../Prenotazione/index.php?class=H" class="small_right bottom"> Aula H
                     <!-- Tooltip Aula G -->   
                     <span class="tooltip">
-                        <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                        <img src="../immagini_aule/aulah.jpeg" alt="img-aula-emsepio">
                         <b style="text-align: center; color: #2d4b65;">Aula H</b><br>
                         Dimensione: Piccola <br>
                         Prese elettriche: No <br>
@@ -187,7 +187,7 @@ include '../checksession.php';
             
             <!-- Tooltip Aula I -->   
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulai.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;">Aula I</b><br>
                 Dimensione: Grande<br>
                 Prese elettriche: Si<br>
@@ -200,7 +200,7 @@ include '../checksession.php';
 
             <!-- Tooltip Aula L -->   
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulal.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;">Aula L</b><br>
                 Dimensione: Grande<br>
                 Prese elettriche: Si<br>
@@ -214,7 +214,7 @@ include '../checksession.php';
 
             <!-- Tooltip Aula M -->   
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulam.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;"> Aula M</b><br>
                 Dimensione: Piccola<br>
                 Prese elettriche: No<br>
@@ -226,7 +226,7 @@ include '../checksession.php';
         <a id="N" href="../Prenotazione/index.php?class=N" class="big top">    Aula N
             <!-- Tooltip Aula N -->   
             <span class="tooltip">
-                <img src="../Prenotazione/aula-esempio.jpg" alt="img-aula-emsepio">
+                <img src="../immagini_aule/aulan.jpeg" alt="img-aula-emsepio">
                 <b style="text-align: center; color: #2d4b65;"> Aula N</b><br>
                 Dimensione: Grande<br>
                 Prese elettriche: Si<br>

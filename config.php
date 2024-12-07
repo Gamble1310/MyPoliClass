@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "MyPoliClassDB";
+    $dbname = "MyPoliClassDB2";
 
     // Creazione della connessione
     $conn = new mysqli($servername, $username, $password, $dbname);

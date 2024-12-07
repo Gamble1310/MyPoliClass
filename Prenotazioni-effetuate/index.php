@@ -70,6 +70,9 @@ include '../checksession.php';
             require_once '../config.php';
             $email = $_SESSION['username'];
 
+            $querydel = "DELETE FROM prenotazioni WHERE Data_Prenotazione < CURDATE()";
+            $resultdel  = $conn->query($querydel);
+
             $query = "
                 SELECT 
                     Prenotazioni.Data_Prenotazione, 

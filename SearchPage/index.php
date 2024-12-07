@@ -131,7 +131,7 @@ include '../checksession.php';
 
       <div class="filterbuttons">
         <input type="submit" value="Applica" title="Applica i filtra ai risultati">
-        <input type="reset" value="Reset" title="Rimuovi tutti i filtri">
+        <input type="submit" value="Reset" title="Rimuovi tutti i filtri">
       </div>
     </form>
   </div>

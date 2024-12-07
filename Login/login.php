@@ -7,10 +7,9 @@ session_start();
     $username = $_POST['username'];
     $password_utente = $_POST['pwd'];
 
-
     // Connessione al database
     $dbhost = "localhost";
-    $dbname = "MyPoliClassDB";
+    $dbname = "MyPoliClassDB2";
     $dbuser = "root";
     $dbpassword = "";
 
