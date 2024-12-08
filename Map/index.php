@@ -28,7 +28,7 @@ include '../checksession.php';
     <img src="../Home/menu-icon.svg" alt="menu" class="navbarIcon" onclick="openNav()">
     <span>
         <h1>MYPOLICLASS </h1>
-        <a href="#"></a><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
+        <a href="#"><img src="../Home/icon.ico" alt="icon" width="64px" height="64px"></a>
     </span>
     <i width="64px"></i>
     <!-- Questo elemento vuoto mi serve per far in modo che il nome del sito sia centrato, poiche' per l'header uso una flexbox con justify-content: spacebetween;-->

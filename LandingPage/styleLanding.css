@@ -1,0 +1,81 @@
+/*Css della landing page*/
+/*    Media query per sovrascrivere la media query in style.css, in modo che il nome del sito non scompaia quanod rimpicciolisci la pagina    */
+@media (max-width:600px) {
+
+    #header h1,
+    i {
+      display: inline;
+    }
+  
+    .intro{
+        flex-direction: column;
+    }
+  }
+
+
+
+
+
+
+/*      Contenitore del contenuto della pagina      */
+.landContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px 20px 10px 10px;
+    
+}
+
+.landContainer h2{
+    color: #2d4b65;
+    display: block;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-weight: bold;  
+    font-size: 36px;  
+    margin: 0;
+}
+
+
+
+
+
+
+/*       Testo introduttivo con bottone per l'accesso    */
+.intro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 30px;
+    flex: 30%;
+}
+
+.intro p{
+    font-size: 24px;
+    color: #333;
+    display: block;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+
+.intro a{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    background-color: #2d4b65;
+    border:  5px solid #2d4b65;
+    border-radius: 10px; 
+    padding: 8px;
+    width: 250px;
+    margin: auto;
+    transition: .5s;
+}
+
+.intro a:hover{
+    color: #2d4b65;
+    background-color: #ddd;
+    border: 5px solid #2d4b65;
+}
