@@ -31,7 +31,7 @@ session_start();
             $_SESSION['timeout_duration'] = 1800; // Timeout in secondi (30 minuti)
 
             $_SESSION['username'] = $username;
-            header("Location: ../Registration/index.php");       
+            header("Location: ../Registration");       
         }
         else {
 
@@ -46,7 +46,7 @@ session_start();
 
             //prendo l'immagine del profilo (serve solo quando il login è effettuato nell'effettivo nella WebApp) DA VEDERE
             $_SESSION['icon'] = $row['Img_Profilo']; // Salva il BLOB nella sessione
-            header("Location: ../Dashboard/index.php");
+            header("Location: ../Dashboard");
         }
     } else {
         $_SESSION['errore_login'] = "Credenziali errate, riprova";

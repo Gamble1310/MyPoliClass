@@ -11,6 +11,6 @@ session_destroy();
 // Reindirizza alla pagina Login.php con un messaggio
 session_start();
 $_SESSION['logout'] = "Logout effettuato, arrivederci";
-header("Location: Login/index.php");
+header("Location: Login");
 exit();
 ?>

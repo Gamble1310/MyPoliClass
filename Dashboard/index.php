@@ -42,10 +42,10 @@ include '../checksession.php';
         <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
 
         <img src="../Home/user.svg" alt="Immagine profilo" class="profileimg">   <!-- MODIFICA SULLA IMMAGINE, PUò ESSERE SOLO PNG -->
-        <a href="../Dashboard/index.php"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
-        <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
-        <a href="../Map/index.php"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-        <a href="../Prenotazioni-effetuate/index.php"><img src="../Home/reservation.svg" width="36px" height="36px">Le mie Prenotazioni</a>
+        <a href="../Dashboard"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
+        <a href="../SearchPage"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+        <a href="../Map"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+        <a href="../Prenotazioni-effetuate"><img src="../Home/reservation.svg" width="36px" height="36px">Le mie Prenotazioni</a>
         <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
         <!-- &nbsp; simbolo del carattere di spaziatura-->
         <!-- Icona per il logout -->
@@ -73,13 +73,13 @@ include '../checksession.php';
 
         <div class="dashboard-flexbox">
             
-            <a href="../Map/index.php" class="dashboard-flexitem">
+            <a href="../Map" class="dashboard-flexitem">
                  <p>Visualizza la Mappa</p>
                  <img src="../Dashboard/mapview.png" alt="Mappa">
                  <br><br>
             </a>
 
-            <a href="../SearchPage/index.php" class="dashboard-flexitem">
+            <a href="../SearchPage" class="dashboard-flexitem">
                 <p>Visualizza lo Strumento di Ricerca</p>
                 <img src="../Dashboard/searchview.png" alt="Strumrnto di ricerca">
                 <br><br>

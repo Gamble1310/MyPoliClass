@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
     // Reindirizza alla pagina di login se la sessione non è attiva (casi di accessi pagine riservate da utenti NON loggati)
     session_start();
     $_SESSION['accesso_negato'] = "Devi effettuare l'accesso per accedere";
-    header("Location: ../Login/index.php");    
+    header("Location: ../Login");    
     exit();
 }
 
@@ -19,7 +19,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     session_destroy();   // Distrugge la sessione
     session_start();
     $_SESSION['sessione_scaduta'] = "Sessione scaduta, riaccedi";
-    header("Location: ../Login/index.php");  //gestire il messaggio di errore
+    header("Location: ../Login");  //gestire il messaggio di errore
     exit();
 }
 

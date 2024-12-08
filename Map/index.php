@@ -39,10 +39,10 @@ include '../checksession.php';
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!--&times; e' la combinazione di caratteri della X come icoma di chiusura-->
     <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
-    <a href="../Dashboard/index.php"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
-    <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
-    <a href="../Map/index.php"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-    <a href="../Prenotazioni-effetuate/index.php"><img src="../Home/reservation.svg" width="36px"
+    <a href="../Dashboard"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
+    <a href="../SearchPage"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+    <a href="../Map"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+    <a href="../Prenotazioni-effetuate"><img src="../Home/reservation.svg" width="36px"
             height="36px">Le mie Prenotazioni</a>
     <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
     <!-- &nbsp; simbolo del carattere di spaziatura-->
@@ -70,7 +70,7 @@ include '../checksession.php';
         <!--Aree colorate con link che porta alla pagina della prenotazione, 
             ogni aula fa parte di alcune classi per determinarne la grandezza e la posizione-->
 
-        <a id="A" href="../Prenotazione/index.php?class=A" class="big bottom">Aula A
+        <a id="A" href="../Prenotazione?class=A" class="big bottom">Aula A
 
             <!-- Tooltip aula A -->
             <span class="tooltip">
@@ -85,7 +85,7 @@ include '../checksession.php';
         </a>
 
 
-        <a id="B" href="../Prenotazione/index.php?class=B" class="small_left bottom">Aula B
+        <a id="B" href="../Prenotazione?class=B" class="small_left bottom">Aula B
 
             <!-- Tooltip aula B -->   <!-- AULA B DA AGGIUNGERE AL DB-->
             <span class="tooltip">
@@ -100,7 +100,7 @@ include '../checksession.php';
 
 
 
-        <a id="C" href="../Prenotazione/index.php?class=C" class="big bottom">Aula C
+        <a id="C" href="../Prenotazione?class=C" class="big bottom">Aula C
 
             <!-- Tooltip aula C -->   
             <span class="tooltip">
@@ -114,7 +114,7 @@ include '../checksession.php';
 
         </a>
 
-        <a id="D" href="../Prenotazione/index.php?class=D" class="big top"> Aula D
+        <a id="D" href="../Prenotazione?class=D" class="big top"> Aula D
             
            <!-- Tooltip aula D -->   
            <span class="tooltip">
@@ -131,7 +131,7 @@ include '../checksession.php';
         </a>
 
 
-        <a id="E" href="../Prenotazione/index.php?class=E" class="small_left top"> Aula E
+        <a id="E" href="../Prenotazione?class=E" class="small_left top"> Aula E
 
             <!-- Tooltip aula E -->   
            <span class="tooltip">
@@ -145,7 +145,7 @@ include '../checksession.php';
         </a>
 
 
-        <a id="Orabona" href="../Prenotazione/index.php?class=Magna" class="big top"> Aula Magna Orabona  
+        <a id="Orabona" href="../Prenotazione?class=Magna" class="big top"> Aula Magna Orabona  
          
        <!-- Tooltip Aula Magna Orabona -->   
          <span class="tooltip">
@@ -159,7 +159,7 @@ include '../checksession.php';
         </a>
 
 
-        <a id="G" href="../Prenotazione/index.php?class=G" class="big bottom"> Aula G
+        <a id="G" href="../Prenotazione?class=G" class="big bottom"> Aula G
 
         <!-- Tooltip Aula G -->   
          <span class="tooltip">
@@ -172,7 +172,7 @@ include '../checksession.php';
 
         </a>
 
-        <a id="H" href="../Prenotazione/index.php?class=H" class="small_right bottom"> Aula H
+        <a id="H" href="../Prenotazione?class=H" class="small_right bottom"> Aula H
                     <!-- Tooltip Aula G -->   
                     <span class="tooltip">
                         <img src="../immagini_aule/aulah.jpeg" alt="img-aula-emsepio">
@@ -183,7 +183,7 @@ include '../checksession.php';
                     </span>
         </a>
 
-        <a id="I" href="../Prenotazione/index.php?class=I" class="big bottom"> Aula I
+        <a id="I" href="../Prenotazione?class=I" class="big bottom"> Aula I
             
             <!-- Tooltip Aula I -->   
             <span class="tooltip">
@@ -196,7 +196,7 @@ include '../checksession.php';
 
         </a>
 
-        <a id="L" href="../Prenotazione/index.php?class=l" class="big top">    Aula L
+        <a id="L" href="../Prenotazione?class=l" class="big top">    Aula L
 
             <!-- Tooltip Aula L -->   
             <span class="tooltip">
@@ -210,7 +210,7 @@ include '../checksession.php';
         </a>
 
 
-        <a id="M" href="../Prenotazione/index.php?class=M" class="small_right top"> Aula M
+        <a id="M" href="../Prenotazione?class=M" class="small_right top"> Aula M
 
             <!-- Tooltip Aula M -->   
             <span class="tooltip">
@@ -223,7 +223,7 @@ include '../checksession.php';
 
         </a>
 
-        <a id="N" href="../Prenotazione/index.php?class=N" class="big top">    Aula N
+        <a id="N" href="../Prenotazione?class=N" class="big top">    Aula N
             <!-- Tooltip Aula N -->   
             <span class="tooltip">
                 <img src="../immagini_aule/aulan.jpeg" alt="img-aula-emsepio">

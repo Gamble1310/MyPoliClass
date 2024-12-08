@@ -122,10 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset'])) {
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <img src="../Home/user.svg" alt="immagine-profilo" class="profileimg">
-    <a href="../Dashboard/index.php"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
-    <a href="../SearchPage/index.php"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
-    <a href="../Map/index.php"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
-    <a href="../Prenotazioni-effetuate/index.php"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie Prenotazioni</a>
+    <a href="../Dashboard"><img src="../Home/dashboard.svg" width="36px" height="36px">Dashboard</a>
+    <a href="../SearchPage"><img src="../Home/menu-search.svg" width="36px" height="36px">Ricerca</a>
+    <a href="../Map"><img src="../Home/map-icon.svg" width="36px" height="36px">Mappa</a>
+    <a href="../Prenotazioni-effetuate"><img src="../Home/reservation.svg" width="36px" height="36px"> Le mie Prenotazioni</a>
     <a href="https://www.poliba.it/"><img src="../Home/link.svg" width="36px" height="36px">Link sito Poliba</a>
     <a href="../Logout.php" class="logout"> Logout <img src="../Home/logout.svg" alt="logout" width="64px" height="64px"></a>
   </div>
@@ -261,7 +261,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset'])) {
 
         if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
-            $url = "../Prenotazione/index.php?class=" . urlencode($row['Nome_Aula']); // URL della pagina con il parametro classe
+            $url = "../Prenotazione?class=" . urlencode($row['Nome_Aula']); // URL della pagina con il parametro classe
             echo '<div class="search-result" onclick="window.location.href=\'' . $url . '\'">';
             echo '<img src="' . $row['Immagine'] . '" alt="Immagine aula">';
             echo '<section>';
