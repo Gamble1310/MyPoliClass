@@ -4,6 +4,12 @@
 <!-- Verifica se la sessione è attiva tramite il file checksession-->
 <?php
 include '../checksession.php';
+// Controlla se la variabile di sessione "username" è impostata
+if (isset($_SESSION["username"])) {
+    $usernameLogin = $_SESSION["username"];
+} else {
+    $usernameLogin = ''; // Imposta una stringa vuota se non è loggato
+}
 ?>
 
 <head>
@@ -625,7 +631,7 @@ include '../checksession.php';
                                 console.log("Parametro 'class' non trovato nella query string.");
                             }
 
-                            var usernameLogin = "v.volpe@studenti.poliba.it";
+                            var usernameLogin = "<?php echo htmlspecialchars($usernameLogin); ?>";
                             var dayOfWeek = selectedDateCell.dataset.dayOfWeek
                             var data = {
                                 data: formattedDate,

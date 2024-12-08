@@ -1,8 +1,9 @@
 <?php
 // Includi la connessione al database e le impostazioni PHP necessarie
 require_once '../config.php';
+include '../checksession.php';
 $conn->set_charset("utf8");
-$Username = 'v.volpe@studenti.poliba.it';
+$UsernameLogin = $_SESSION["username"];
 if(isset($_POST['NomeClasse'])){
     $NomeClasse = $_POST['NomeClasse'];
 

@@ -4,6 +4,43 @@
 <!-- Verifica se la sessione è attiva tramite il file checksession -->
 <?php
 include '../checksession.php';
+
+// Inizializza tutte le variabili con valori predefiniti
+$grandezza = null;
+$prese = false;
+$lim = false;
+$connessione = false;
+$aria = false;
+$data = null;
+
+// Gestione del reset
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['reset'])) {
+        // Reset: Tutte le variabili tornano ai valori iniziali
+        $grandezza = null;
+        $prese = false;
+        $lim = false;
+        $connessione = false;
+        $aria = false;
+        $data = null;
+    } else {
+        // Applica i valori inviati
+        $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
+        $prese = isset($_POST['extraPrese']);
+        $lim = isset($_POST['extraLim']);
+        $connessione = isset($_POST['extraConnessione']);
+        $aria = isset($_POST['extraAC']);
+        $data = isset($_POST['data']) ? $_POST['data'] : null;
+    }
+}
+
+require_once('../config.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset'])) {
+  header("Location: " . $_SERVER['PHP_SELF']);
+  exit();
+} 
+
 ?>
 
 <head>
@@ -108,32 +145,58 @@ include '../checksession.php';
       <img src="../SearchPage/filter-icon.svg" alt="filter icon" width="40px" height="40px">
     </div>
 
-    <form action="<?=($_SERVER['PHP_SELF'])?>" method="POST">
-      <fieldset class="filterbuttons">
-        <legend>Grandezza</legend>
-        <span><input type="radio" id="piccola" name="grandezza" value="piccola"><label for="piccola">Piccola</label></span>
-        <span><input type="radio" id="grande" name="grandezza" value="grande"><label for="grande">Grande</label></span>
-      </fieldset>
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+          <fieldset class="filterbuttons">
+              <legend>Grandezza</legend>
+              <span>
+                  <input type="radio" id="piccola" name="grandezza" value="piccola"
+                      <?= ($grandezza === 'piccola') ? 'checked' : ''; ?>>
+                  <label for="piccola">Piccola</label>
+              </span>
+              <span>
+                  <input type="radio" id="grande" name="grandezza" value="grande"
+                      <?= ($grandezza === 'grande') ? 'checked' : ''; ?>>
+                  <label for="grande">Grande</label>
+              </span>
+          </fieldset>
 
-      <button type="button" onclick="toggleDropdown()" class="dropdownBtn">Filtri Aggiuntivi 
-        <img src="../SearchPage/dropdown-arrow.svg" alt="dropdown" style="height: 36px;width: 36px;" id="dropArrow">
-      </button>
+          <button type="button" onclick="toggleDropdown()" class="dropdownBtn">Filtri Aggiuntivi 
+              <img src="../SearchPage/dropdown-arrow.svg" alt="dropdown" style="height: 36px;width: 36px;" id="dropArrow">
+          </button>
 
-      <fieldset id="dropdownMenu">
-        <span><input type="checkbox" id="prese" name="extraPrese" value="prese"><label for="prese">Presenza di prese elettriche</label></span><br>
-        <span><input type="checkbox" id="lim" name="extraLim" value="lim"><label for="lim">Lim</label></span><br>
-        <span><input type="checkbox" id="connessione" name="extraConnessione" value="connessione"><label for="connessione">Connessione</label></span><br>
-        <span><input type="checkbox" id="aria-condizonata" name="extraAC" value="AC"><label for="aria-condizonata">Aria condizionata</label></span><br>
-        <label>Data</label>
-        <input type="date" id="data" name="data" title="Seleziona una data" min="<?= date('Y-m-d', strtotime('+1 day')); ?>">
+          <fieldset id="dropdownMenu">
+              <span>
+                  <input type="checkbox" id="prese" name="extraPrese" value="prese"
+                      <?= $prese ? 'checked' : ''; ?>>
+                  <label for="prese">Presenza di prese elettriche</label>
+              </span><br>
+              <span>
+                  <input type="checkbox" id="lim" name="extraLim" value="lim"
+                      <?= $lim ? 'checked' : ''; ?>>
+                  <label for="lim">Lim</label>
+              </span><br>
+              <span>
+                  <input type="checkbox" id="connessione" name="extraConnessione" value="connessione"
+                      <?= $connessione ? 'checked' : ''; ?>>
+                  <label for="connessione">Connessione</label>
+              </span><br>
+              <span>
+                  <input type="checkbox" id="aria-condizonata" name="extraAC" value="AC"
+                      <?= $aria ? 'checked' : ''; ?>>
+                  <label for="aria-condizonata">Aria condizionata</label>
+              </span><br>
+              <label>Data</label>
+              <input type="date" id="data" name="data" title="Seleziona una data"
+                  min="<?= date('Y-m-d', strtotime('+1 day')); ?>"
+                  value="<?= htmlspecialchars($data); ?>">
+          </fieldset>
 
-      </fieldset>
+        <div class="filterbuttons">
+          <input type="submit" name="apply" value="Applica" title="Applica i filtri ai risultati">
+          <input type="submit" name="reset" value="Reset" title="Rimuovi tutti i filtri">
+        </div>
+      </form>
 
-      <div class="filterbuttons">
-        <input type="submit" value="Applica" title="Applica i filtra ai risultati">
-        <input type="submit" value="Reset" title="Rimuovi tutti i filtri">
-      </div>
-    </form>
   </div>
 
   <!-- Contenuto principale -->
@@ -151,14 +214,26 @@ include '../checksession.php';
     <!-- Lista dinamica dei risultati -->
     <div class="search-list">
       <?php
-        require_once('../config.php');
+          // Inizializza tutte le variabili con valori predefiniti
+          $grandezza = null;
+          $prese = false;
+          $lim = false;
+          $connessione = false;
+          $aria = false;
+          $data = null;
 
-        $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
-        $prese = isset($_POST['extraPrese']) ? true : false;
-        $lim = isset($_POST['extraLim']) ? true : false;
-        $connessione = isset($_POST['extraConnessione']) ? true : false;
-        $aria = isset($_POST['extraAC']) ? true : false;
-        $data = isset($_POST['data']) ? $_POST['data'] : null;
+          // Gestione dei dati inviati tramite POST
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+              $grandezza = isset($_POST['grandezza']) ? $_POST['grandezza'] : null;
+              $prese = isset($_POST['extraPrese']);
+              $lim = isset($_POST['extraLim']);
+              $connessione = isset($_POST['extraConnessione']);
+              $aria = isset($_POST['extraAC']);
+              $data = isset($_POST['data']) ? $_POST['data'] : null;
+          }
+
+
+
 
         $query = "SELECT a.Nome_Aula, a.Numero_Posti, a.Tipologia, a.Piano, a.Prese, a.Aria, a.Descrizione, a.Immagine, a.Connessione, a.Lim
                   FROM aule a

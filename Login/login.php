@@ -42,7 +42,7 @@ session_start();
             $_SESSION['username'] = $username;
 
             //USERNAMELOGIN 
-            $_SESSION['usernameLogin'] = $username;
+            $_SESSION['username'] = $username;
 
             //prendo l'immagine del profilo (serve solo quando il login è effettuato nell'effettivo nella WebApp) DA VEDERE
             $_SESSION['icon'] = $row['Img_Profilo']; // Salva il BLOB nella sessione
