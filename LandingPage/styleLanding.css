@@ -1,22 +1,4 @@
 /*Css della landing page*/
-/*    Media query per sovrascrivere la media query in style.css, in modo che il nome del sito non scompaia quanod rimpicciolisci la pagina    */
-@media (max-width:600px) {
-
-    #header h1,
-    i {
-      display: inline;
-    }
-  
-    .intro{
-        flex-direction: column;
-    }
-  }
-
-
-
-
-
-
 /*      Contenitore del contenuto della pagina      */
 .landContainer{
     display: flex;
@@ -51,6 +33,7 @@
 }
 
 .intro p{
+    margin-top: 0px;
     font-size: 24px;
     color: #333;
     display: block;
@@ -79,3 +62,26 @@
     background-color: #ddd;
     border: 5px solid #2d4b65;
 }
+
+
+
+
+
+
+/*    Media query per sovrascrivere la media query in style.css, in modo che il nome del sito non 
+      scompaia quanod rimpicciolisci la pagina (In questo caso non necessario poichè non vi è l'icona della navigazione e 
+      stilisticamnete in questa pagina dovrebbe essere più carino lasciare il nome essendoci lo spazio) */
+@media (max-width:850px) {
+
+    #header h1,
+    i {
+      display: inline;
+    }
+  
+    .landContainer{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    
+  }

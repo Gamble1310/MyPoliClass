@@ -138,6 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset'])) {
     <img src="../Home/arrow-upward.svg" alt="arrow-upward" height="40px" width="40px">
   </button>
 
+  <h2>Pagina di Ricerca</h2>
+  
   <!-- Sezione Filtri -->
   <div class="filters">
     <div id="filterTitle">
@@ -201,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset'])) {
 
   <!-- Contenuto principale -->
   <div class="content">
-    <h2>Pagina di Ricerca</h2>
+    
 
     <!-- Barra di ricerca -->
     <form id="searchbar" class="searchbar" onsubmit="return false;">
