@@ -46,7 +46,7 @@ try {
         $_SESSION['registrazione_errore'] = "Errore: l'email è già registrata nel sistema.";
     } else {
         // Per altri errori
-        $_SESSION['registrazione_errore_vario'] = "Errore durante la registrazione: " ;
+        $_SESSION['registrazione_errore_vario'] = "Errore durante la registrazione: tutti i campi sono obbligatori " ;
     }
     header("Location: index.php");
     exit();

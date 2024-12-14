@@ -48,7 +48,7 @@ include '../checksession.php';
                     <span><label>Password</label><br>
                         <input type="password" id="pwd" name="pwd" required></span><br>
                     <span><label>Immagine profilo</label><br>
-                        <input type="file" id="img" name="img"></span><br><br>
+                        <input type="file" id="img" name="img" required></span><br><br>
                     <input type="submit" value="Registra"><br><br>
 
                     <span><a href="../Logout.php" class="logoutrec"> Logout </a> </span>
@@ -89,6 +89,17 @@ include '../checksession.php';
                         // Chiudi la sessione
                         session_write_close();
                     ?>     
+                    <?php
+                        session_start();
+                        // Mostra il messaggio di registrazione se effettuata correttamente
+                        if (isset($_SESSION['registrazione_errore_vario'])) {
+                            echo "<p style='color: red; font-size: 14px; margin-top: 10px;'>".$_SESSION['registrazione_errore_vario']."</p>";
+                            // Rimuovi il messaggio dopo averlo mostrato
+                            unset($_SESSION['registrazione_errore_vario']);
+                        }
+                        // Chiudi la sessione
+                        session_write_close();
+                    ?>    
 
 
 
