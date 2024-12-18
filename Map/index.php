@@ -18,8 +18,7 @@ include '../checksession.php';
     <!-- Link ai file dell'estetica-->
     <link rel="stylesheet" href="../Home/style.css">
     <link rel="stylesheet" href="../Map/styleMap.css">
-    <link rel="stylesheet" href="../SearchPage/styleSearchPage.css">
-    <!--Diversi elementi in questa pagina sono presi da SearchPage-->
+    
 
 </head>
 
